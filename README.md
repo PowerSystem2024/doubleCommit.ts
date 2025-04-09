@@ -6,7 +6,7 @@
 
 <div align="center"> 
  <p>Este repositorio pertenece al grupo Double-Commit cohorte 2024 de la UTN facultad regional San Rafael Mendoza.</p>
-<div>
+</div>
 
 Integrantes:
 
