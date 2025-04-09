@@ -29,7 +29,7 @@ Integrantes:
 
 - Esta sección se actualiza de manera automática cada dos horas con `github actions` mediante `node.js`
 
-## Algunos chistes nivel “te odio pero me río igual” 😥
+### Algunos chistes nivel “te odio pero me río igual” 😥
 
 <br>
 
