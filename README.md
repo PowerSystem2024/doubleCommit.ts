@@ -29,14 +29,16 @@ Integrantes:
 
 - Esta sección se actualiza de manera automática cada dos horas con `github actions` mediante `node.js`
 
-### Algunos chistes nivel “te odio pero me río igual” 😥
-
 <br>
 
 <div align="center">
-    > *"¿Qué hace un while en una relación? Se queda hasta que la condición cambie."*
-    >
-    > — Chistes Malos
+
+<h1>Algunos chistes nivel “te odio pero me río igual” 😥</h1>
+
+> *"¿Por qué el programador cruzó la calle? Porque vio un cartel que decía 'Hello, World!' del otro lado."*
+>
+> — Chistes Malos
+
 </div>
 
 #

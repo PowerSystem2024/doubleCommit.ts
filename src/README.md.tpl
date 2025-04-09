@@ -29,14 +29,16 @@ Integrantes:
 
 - Esta sección se actualiza de manera automática cada dos horas con `github actions` mediante `node.js`
 
-### Algunos chistes nivel “te odio pero me río igual” 😥
-
 <br>
 
 <div align="center">
-    > *"%{{chiste_random}}%"*
-    >
-    > — Chistes Malos
+
+<h1>Algunos chistes nivel “te odio pero me río igual” 😥</h1>
+
+> *"%{{chiste_random}}%"*
+>
+> — Chistes Malos
+
 </div>
 
 #
