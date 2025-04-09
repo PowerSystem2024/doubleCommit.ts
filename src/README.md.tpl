@@ -34,7 +34,9 @@ Integrantes:
 <br>
 
 <div align="center">
-    > *%{{chiste_random}}%.*
+    > *"%{{chiste_random}}%"*
+    >
+    > — Chistes Malos
 </div>
 
 #

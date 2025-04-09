@@ -29,12 +29,14 @@ Integrantes:
 
 - Esta sección se actualiza de manera automática cada dos horas con `github actions` mediante `node.js`
 
-## Algunos chistes nivel “te odio pero me río igual” 😥
+### Algunos chistes nivel “te odio pero me río igual” 😥
 
 <br>
 
 <div align="center">
-    > *¿Por qué nadie invita a los programadores a fiestas? Porque siempre están en bucle..*
+    > *"¿Qué hace un while en una relación? Se queda hasta que la condición cambie."*
+    >
+    > — Chistes Malos
 </div>
 
 #

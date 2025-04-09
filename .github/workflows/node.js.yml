@@ -27,11 +27,16 @@ jobs:
       - name: Actualizar chistes del README.md
         run: npm run chiste-malo
 
-      - name: Configurar Git y hacer push
+      - name: Configurar Git y hacer push con token
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           git config user.name "solidsnk86"
           git config user.email "calcagni.gabriel86@gmail.com"
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/PowerSystem2024/doubleCommit.ts.git
+
+          # Actualizar el remoto con autenticación
+          git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/PowerSystem2024/doubleCommit.ts.git
+
           git add README.md
           git diff --quiet && git diff --staged --quiet || git commit -m "🤖[neoBot] Se ha actualizado el chiste 😭"
           git push origin main
