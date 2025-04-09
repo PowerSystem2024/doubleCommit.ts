@@ -34,7 +34,7 @@ Integrantes:
 <br>
 
 <div align="center">
-    > *¿Por qué nadie invita a los programadores a fiestas? Porque siempre están en bucle..*
+    > *%{{chiste_random}}%.*
 </div>
 
 #

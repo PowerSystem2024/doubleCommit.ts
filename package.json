@@ -1,0 +1,24 @@
+{
+  "name": "doublecommit.ts",
+  "version": "1.0.0",
+  "description": "Repositorio Double Commit 2025",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "chiste-malo": "node ./src/index.js"
+  },
+  "author": "Double Commit",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "graphql-request": "^7.1.2",
+    "node-fetch": "2.6.7"
+  },
+  "devDependencies": {
+    "standard": "16.0.4"
+  },
+  "eslintConfig": {
+    "extends": "./node_modules/standard/eslintrc.json"
+  }
+}

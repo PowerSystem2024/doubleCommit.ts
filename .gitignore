@@ -1,0 +1,4 @@
+# Ignorar node_modules y otras cuestiones 🤨
+node_modules
+.env
+.env.*

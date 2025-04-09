@@ -1,0 +1,40 @@
+name: Actualización chiste del README.md
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */2 * * *'
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: Actualizar chistes del README.md
+        run: npm run chiste-malo
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure Git
+        run: |
+          git config user.name "solidsnk86"
+          git config user.email "calcagni.gabriel86@gmail.com"
+          git add README.md gh-stats.svg
+          git diff --quiet && git diff --staged --quiet || git commit -m "🤖[neoBot] Se ha actualizado el chiste 😭"
+          git push origin master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
