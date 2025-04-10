@@ -30,7 +30,7 @@ const sortearChistes = (chistes = []) => {
 
     const chisteAlAzar = sortearChistes(arrayDeChistesMalos)
     const readmeActualizado = plantilla.replace(
-      VARIABLES_PLANTILLA.chiste,
+      VARIABLES_PLANTILLA.CHISTE,
       chisteAlAzar
     )
 
