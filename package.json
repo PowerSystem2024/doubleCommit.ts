@@ -14,11 +14,5 @@
     "dotenv": "^16.4.7",
     "graphql-request": "^7.1.2",
     "node-fetch": "2.6.7"
-  },
-  "devDependencies": {
-    "standard": "16.0.4"
-  },
-  "eslintConfig": {
-    "extends": "./node_modules/standard/eslintrc.json"
   }
 }
