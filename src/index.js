@@ -1,10 +1,8 @@
 import fetch from 'node-fetch'
 import { promises as fs } from 'fs'
-import { VARIABLES_PLANTILLA } from './constants.js'
+import { chistesMalos, VARIABLES_PLANTILLA } from './constants.js'
 
-const chistesMalos =
-  'https://cdn.jsdelivr.net/gh/liquidsnk86/chistes-malos@main/chistes-malos.json'
-const getChistesMalos = async () => {
+const obtenerChistesMalos = async () => {
   try {
     const response = await fetch(chistesMalos, {
       headers: { 'Content-Type': 'application/json' }
@@ -27,7 +25,7 @@ const sortearChistes = (chistes = []) => {
   try {
     const [plantilla, arrayDeChistesMalos] = await Promise.all([
       fs.readFile('./src/README.md.tpl', { encoding: 'utf-8' }),
-      getChistesMalos()
+      obtenerChistesMalos()
     ])
 
     const chisteAlAzar = sortearChistes(arrayDeChistesMalos)
