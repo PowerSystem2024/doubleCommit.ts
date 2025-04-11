@@ -8,7 +8,7 @@ const obtenerChistesMalos = async () => {
       headers: { 'Content-Type': 'application/json' }
     })
     if (!response.ok) {
-      console.error('Error en la respuesta', response.statusText)
+      throw new Error(response.statusText)
     }
     const data = await response.json()
     return data.chistes
