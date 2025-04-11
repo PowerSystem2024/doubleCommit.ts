@@ -18,14 +18,14 @@ Integrantes:
     <img src="https://avatars.githubusercontent.com/u/134340520?v=4" width="45" height="45" alt="Fran avatar" />
     </a>
     <a href="https://github.com/Philama" title="Philama">
-    <img src="https://avatars.githubusercontent.com/u/25463245?v=4" width="45" height="46" alt="Guardi avatar" />
+    <img src="https://avatars.githubusercontent.com/u/25463245?v=4" width="45" height="45" alt="Guardi avatar" />
     </a>
     <a href="https://github.com/solidsnk86/" title="solidsnk86">
     <img src="https://avatars.githubusercontent.com/u/93176365?v=4" width="45" height="45" alt="Gabriel avatar" />
     </a>
 <div>
 
-# 🚍 Sección de actualizaciones automáticas
+### 🚍 Sección de actualizaciones automáticas
 
 - Esta sección se actualiza de manera automática cada dos horas con `github actions` mediante `node.js`
 
@@ -33,9 +33,9 @@ Integrantes:
 
 <div align="center">
 
-<h1>Algunos chistes nivel “te odio pero me río igual” 😥</h1>
+<h3>Algunos chistes nivel “te odio pero me río igual” 😥</h3>
 
-> *"¿Por qué el programador cruzó la calle? Porque vio un cartel que decía 'Hello, World!' del otro lado."*
+> _"Estás tan fuera de contexto como una variable global en una función recursiva."_
 >
 > — Chistes Malos
 

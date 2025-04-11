@@ -25,7 +25,7 @@ Integrantes:
     </a>
 <div>
 
-# 🚍 Sección de actualizaciones automáticas
+### 🚍 Sección de actualizaciones automáticas
 
 - Esta sección se actualiza de manera automática cada dos horas con `github actions` mediante `node.js`
 
@@ -33,7 +33,7 @@ Integrantes:
 
 <div align="center">
 
-<h1>Algunos chistes nivel “te odio pero me río igual” 😥</h1>
+<h3>Algunos chistes nivel “te odio pero me río igual” 😥</h3>
 
 > *"%{{chiste_random}}%"*
 >
