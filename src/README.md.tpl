@@ -8,7 +8,7 @@
  <p>Este repositorio pertenece al grupo Double-Commit cohorte 2024 de la UTN facultad regional San Rafael Mendoza.</p>
 </div>
 
-Integrantes:
+### Integrantes:
 
 <div align="left" style="display: grid; grid-template-columns: repeat(auto-fill, minamax(45px, 1fr));">
     <a href="https://github.com/CeciliaOlejar" title="CeciliaOlejar">

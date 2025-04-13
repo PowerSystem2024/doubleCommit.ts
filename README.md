@@ -8,7 +8,7 @@
  <p>Este repositorio pertenece al grupo Double-Commit cohorte 2024 de la UTN facultad regional San Rafael Mendoza.</p>
 </div>
 
-Integrantes:
+### Integrantes:
 
 <div align="left" style="display: grid; grid-template-columns: repeat(auto-fill, minamax(45px, 1fr));">
     <a href="https://github.com/CeciliaOlejar" title="CeciliaOlejar">
@@ -35,7 +35,7 @@ Integrantes:
 
 <h3>Algunos chistes nivel “te odio pero me río igual” 😥</h3>
 
-> _"Estás tan fuera de contexto como una variable global en una función recursiva."_
+> *"¿Cuántos programadores se necesitan para cambiar una bombilla? Ninguno, eso es un problema de hardware."*
 >
 > — Chistes Malos
 
