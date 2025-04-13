@@ -18,18 +18,11 @@ public class Orden {
         } else {
             System.out.println("Has superado el límite: " + Orden.MAX_COMPUTADORAS);
         }
-    }  public void mostrarOrdenes() {
+    }  public void mostrarOrden() {
             System.out.println("Orden #: " + this.idOrden);
             System.out.println("Computadoras de la orden = " + this.idOrden);
             for (int i = 0; i < this.contadorComputadoras; i++) {
                 System.out.println(this.computadora[i]);
             }
     }
-
-    @Override
-    public String toString() {
-        return "Orden{" + "idOrden=" + idOrden + ", computadora=" + computadora + ", contadorComputadoras=" + contadorComputadoras + '}';
-    }
-    
-    
 }
