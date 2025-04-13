@@ -18,6 +18,7 @@ public class Orden {
         } else {
             System.out.println("Has superado el límite: " + Orden.MAX_COMPUTADORAS);
         }
+    
     }  public void mostrarOrden() {
             System.out.println("Orden #: " + this.idOrden);
             System.out.println("Computadoras de la orden = " + this.idOrden);

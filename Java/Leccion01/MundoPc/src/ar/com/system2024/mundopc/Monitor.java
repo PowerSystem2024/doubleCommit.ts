@@ -17,7 +17,7 @@ public class Monitor {
     }
 
     public String getMarca() {
-        return marca;
+        return this.marca;
     }
 
     public void setMarca(String marca) {
@@ -25,7 +25,7 @@ public class Monitor {
     }
 
     public double getTamanio() {
-        return tamanio;
+        return this.tamanio;
     }
 
     public void setTamanio(double tamanio) {
