@@ -1,3 +1,7 @@
+<div align="left">
+<img src="https://neo-wifi.vercel.app/api/badge-counter?user=doubleCommit.ts&badge_gradient_2=1E68DB&badge_gradient_1=1E68DB&counter_color=010409" alt="Contador de Visitas SolidSnk86" />
+</div>
+
 <div align="center">
     <img src="./public/double-commit-logo.png" width="400" height="auto" />
 </div>
@@ -35,7 +39,7 @@
 
 <h3>Algunos chistes nivel “te odio pero me río igual” 😥</h3>
 
-> *"¿Cuántos programadores se necesitan para cambiar una bombilla? Ninguno, eso es un problema de hardware."*
+> *"¿Qué le dice Java a JavaScript? —¡Deja de decir que somos lo mismo!"*
 >
 > — Chistes Malos
 
