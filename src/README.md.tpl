@@ -1,5 +1,5 @@
 <div align="left">
-<img src="https://neo-wifi.vercel.app/api/badge-counter?user=doubleCommit.ts&badge_gradient_2=1E68DB&badge_gradient_1=1E68DB&counter_color=010409" alt="Contador de Visitas SolidSnk86" />
+<img src="https://neo-wifi.vercel.app/api/badge-counter?user=doubleCommit.ts&badge_gradient_2=1E68DB&badge_gradient_1=1E68DB&counter_color=010409" alt="Contador de Visitas doubleCommit.ts" />
 </div>
 
 <div align="center">
