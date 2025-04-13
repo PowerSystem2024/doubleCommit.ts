@@ -1,10 +1,10 @@
 import fetch from 'node-fetch'
 import { promises as fs } from 'fs'
-import { chistesMalos, VARIABLES_PLANTILLA } from './constants.js'
+import { urlChistesMalos, VARIABLES_PLANTILLA } from './constants.js'
 
 const obtenerChistesMalos = async () => {
   try {
-    const response = await fetch(chistesMalos, {
+    const response = await fetch(urlChistesMalos, {
       headers: { 'Content-Type': 'application/json' }
     })
     if (!response.ok) {
