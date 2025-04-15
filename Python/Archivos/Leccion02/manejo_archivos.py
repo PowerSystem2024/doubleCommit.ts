@@ -3,9 +3,11 @@
 # La 'r' es de read para leer un archivo
 # La 'a' es de append para agregar al archivo
 # La 'x' es para crear un archivo
+
 import os
 # Escencial si hay que leer un archivo en el directorio actual
 current_dir = os.getcwd() # Current Working Directory
+
 # Método path join para ingresar o unir las rutas del fichero
 file_path = os.path.join(current_dir + '/Python/Archivos/Leccion02/manejo_archivos.py')
 
