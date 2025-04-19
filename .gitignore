@@ -4,3 +4,4 @@ node_modules
 .env.*
 /Java/Leccion01/MundoPc/nbproject/private/
 /Java/Leccion01/MundoPc/build/
+/nbproject/private/
