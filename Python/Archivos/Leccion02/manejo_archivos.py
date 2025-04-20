@@ -1,8 +1,10 @@
-# Método open
-# La 'w' es de write para escribir en el archivo
-# La 'r' es de read para leer un archivo
-# La 'a' es de append para agregar al archivo
-# La 'x' es para crear un archivo
+'''
+Método open
+La 'w' es de write para escribir en el archivo
+La 'r' es de read para leer un archivo
+La 'a' es de append para agregar al archivo
+La 'x' es para crear un archivo
+'''
 
 import os
 # Escencial si hay que leer un archivo en el directorio actual
@@ -21,4 +23,4 @@ except Exception as e:
     print(e)
 finally:
     file.close()
-    print(f'Se ha creado el archivo: {file.name}')
+    print(f'✅ Se ha creado el archivo: {file.name}')
