@@ -39,7 +39,7 @@
 
 <h3>Algunos chistes nivel “te odio pero me río igual” 😥</h3>
 
-> *"¿Qué hace un programador después de una ruptura amorosa? Git push --force y a seguir adelante."*
+> *"¿Qué hace un while en una relación? Se queda hasta que la condición cambie."*
 >
 > — Chistes Malos
 
