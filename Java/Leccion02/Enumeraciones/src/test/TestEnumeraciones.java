@@ -6,7 +6,7 @@ import enumeraciones.Continentes;
 public class TestEnumeraciones {
     public static void main(String[] args){
      //       System.out.println("Dia 1: "+Dias.LUNES);
-       //     indicarDiasSemana(Dias.DOMINGO); //Las enueraciones se tratan como cadenas
+        indicarDiasSemana(Dias.DOMINGO); //Las enueraciones se tratan como cadenas
             //ahora no se deben utilizar comillas, se accede a través de el operador de punto
         System.out.println("Continente Nro. 1"+Continentes.AFRICA);
         System.out.println("No. habitantes en el 1to. continentes: "
@@ -48,8 +48,7 @@ public class TestEnumeraciones {
                 break;
             case DOMINGO:
                 System.out.println("Septimo día de la semana");
-                break;
-                
+                break;  
             default:
                 System.out.println("Día no reconocido");
             

@@ -10,7 +10,7 @@ public enum Continentes {
     OCEANIA(15, "1.4 billones");
     
     private final int paises;
-    private String habitantes;
+    private final String habitantes;
     
     Continentes(int paises, String habitantes){
         this.paises = paises;
