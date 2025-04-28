@@ -8,6 +8,7 @@ class CatalogoPeliculas:
     def agregar_pelicula(pelicula):
         with open(CatalogoPeliculas.ruta_archivo, 'a', encoding='utf-8') as archivo:
             archivo.write(str(pelicula) + '\n')
+        print(f"Se ha agregado la siguiente película {pelicula} al catálogo.")
 
     @staticmethod
     def listar_peliculas() -> str:
@@ -20,7 +21,6 @@ class CatalogoPeliculas:
             print("No se encontró el archivo de películas.")
             
     @staticmethod
-
     def buscar_pelicula(pelicula: str) -> str:
         try:
             with open(CatalogoPeliculas.ruta_archivo, 'r', encoding='utf-8') as archivo:

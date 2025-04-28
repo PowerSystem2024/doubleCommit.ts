@@ -1,7 +1,13 @@
 # Ignorar node_modules y otras cuestiones 🤨
+
 node_modules
 .env
 .env.*
+
+# Configuraciones
+.*
+.vscode
+
 /Java/Leccion01/MundoPc/nbproject/private/
 /Java/Leccion01/MundoPc/build/
 /nbproject/private/
