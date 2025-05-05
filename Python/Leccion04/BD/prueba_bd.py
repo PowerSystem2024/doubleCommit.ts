@@ -1,25 +1,28 @@
 # Esto es para conectar postgres
 import psycopg2
+from dsn import DSN
 
-credenciales = {
-    "user": "postgres",
-    "password": "32088028..mGc",
-    "host": "127.0.0.1",
-    "port": "5432",
-    "database": "test_bd"
-}
-conexion = psycopg2.connect(**credenciales)
+conexion = psycopg2.connect(**DSN)
 
-cursor = conexion.cursor()
-sentencia = 'SELECT * FROM persona'
-cursor.execute(sentencia)
+try:
+    with conexion:
+        with conexion.cursor() as cursor:
+            sentencia = "SELECT * FROM persona WHERE id_persona = %s"  # Placeholder
+            id_persona = input("Ingrese el numero del id: ")
+            cursor.execute(
+                sentencia, (id_persona,)
+            )  # De esta manera ejecutamos la sentencia pasando el parametro como tupla
+            resistros = cursor.fetchone()
+            print(resistros)
+            # Obtener los resultados (Todos)
+            # personas = cursor.fetchall()
 
-# Obtener los resultados (Todos)
-personas = cursor.fetchall()
+            # for persona in personas:
+            #     print(persona)
 
-for persona in personas:
-    print(persona)
 
-# Cerramos la conexión
-cursor.close()
-conexion.close()
+except Exception as e:
+    print(f"Ocurrió un error: {e}")
+finally:
+    # Cerramos la conexión
+    conexion.close()
