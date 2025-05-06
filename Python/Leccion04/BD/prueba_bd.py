@@ -7,21 +7,16 @@ conexion = psycopg2.connect(**DSN)
 try:
     with conexion:
         with conexion.cursor() as cursor:
-            sentencia = "SELECT * FROM persona WHERE id_persona = %s"  # Placeholder
-            id_persona = input("Ingrese el numero del id: ")
-            cursor.execute(
-                sentencia, (id_persona,)
-            )  # De esta manera ejecutamos la sentencia pasando el parametro como tupla
-            resistros = cursor.fetchone()
-            print(resistros)
-            # Obtener los resultados (Todos)
-            # personas = cursor.fetchall()
+            sentencia = "SELECT * FROM persona WHERE id_persona IN %s"
+            entrada = input("Digite los id_persona a buscar (separados por coma): ")
+            llaves_primarias = (tuple(entrada.split(", ")),)  # Tupla de tuplas
 
-            # for persona in personas:
-            #     print(persona)
+            cursor.execute(sentencia, llaves_primarias)
+            registros = cursor.fetchall()
+            for registro in registros:
+                print(registro)
 
-
-except Exception as e:
+except psycopg2.Error as e:
     print(f"Ocurrió un error: {e}")
 finally:
     # Cerramos la conexión
