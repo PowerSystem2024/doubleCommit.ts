@@ -1,62 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Piedra, papel, tijera</title>
-  <script>
-    //1 sera piedra, 2 sera papel, 3 sera tijera
-    let jugador = 0;
-    let max = 3;
-    let min = 1;
-    jugar()
-    function random(min, max) {
-      return Math.floor(Math.random() * (max - min + 1) + 1);
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Piedra, Papel o Tijera</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f0f0f0;
+      padding: 30px;
     }
 
-    function jugar() {
-      jugador = prompt('Elije: 1 piedra, 2 papel, 3 tijera');
-      let pc = random(1, 3);
-
-      //alert('Elije jugador' + jugador);
-      if (jugador == 1) {
-        alert('Elejiste piedra');
-      } else if (jugador == 2) {
-        alert('Elegiste papel');
-      } else if (jugador == 3) {
-        alert('Elegiste tijera');
-      } else {
-        alert('Elegiste perder');
-      }
-
-      // Mostrar elección de la PC
-      if (pc == 1) {
-        alert("La PC eligió piedra");
-      } else if (pc == 2) {
-        alert("La PC eligió papel");
-      } else if (pc == 3) {
-        alert("La PC eligió tijera");
-      }
-
-      //Combate
-      if (random() == jugador) {
-        alert('EMPATE');
-      } else if (jugador == 1 && random() == 3) {
-        alert('WIN');
-      } else if (jugador == 2 && random() == 1) {
-        alert('WIN');
-      } else if (jugador == 3 && random() == 2) {
-        alert('WIN');
-      } else {
-        alert('PERDISTE');
-      }
+    h1 {
+      color: #333;
     }
-  </script>
+
+    .opciones {
+      margin: 20px;
+    }
+
+    .boton {
+      font-size: 2rem;
+      margin: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .boton:hover {
+      transform: scale(1.1);
+    }
+
+    #resultado {
+      margin-top: 30px;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+  </style>
 </head>
 
 <body>
-  <h1>Piedra, Papel y Tijera</h1>
+  <h1>✊ Piedra, ✋ Papel o ✌️ Tijera</h1>
+  <div class="opciones">
+    <button class="boton" onclick="jugar(1)">✊</button>
+    <button class="boton" onclick="jugar(2)">✋</button>
+    <button class="boton" onclick="jugar(3)">✌️</button>
+  </div>
+  <div id="resultado"></div>
+
+  <script>
+    function eleccion(opcion) {
+      if (opcion == 1) return "✊ Piedra";
+      if (opcion == 2) return "✋ Papel";
+      if (opcion == 3) return "✌️ Tijera";
+    }
+
+    function random(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    function jugar(jugador) {
+      const pc = random(1, 3);
+
+      let resultado = `Vos elegiste: ${eleccion(jugador)}<br>`;
+      resultado += `La PC eligió: ${eleccion(pc)}<br>`;
+
+      if (jugador === pc) {
+        resultado += "EMPATE";
+      } else if (
+        (jugador === 1 && pc === 3) ||
+        (jugador === 2 && pc === 1) ||
+        (jugador === 3 && pc === 2)
+      ) {
+        resultado += "GANASTE!🎉";
+      } else {
+        resultado += "PERDISTE";
+      }
+
+      document.getElementById("resultado").innerHTML = resultado;
+    }
+  </script>
 </body>
 
 </html>
