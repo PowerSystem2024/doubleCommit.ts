@@ -7,9 +7,7 @@
     <script>
       //1 sera piedra, 2 sera papel, 3 sera tijera
       let jugador = 0;
-      let max = 3;
-      let min = 1;
-      let pc = Math.floor(Math.random() * (max - min + 1) + 1);
+      let pc = aleatorio(1, 3);
       jugador = prompt('Elije: 1 piedra, 2 papel, 3 tijera');
 
       //alert('Elije jugador' + jugador);
