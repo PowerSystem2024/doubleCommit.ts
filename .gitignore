@@ -7,7 +7,7 @@ node_modules
 # Configuraciones
 .*
 .vscode
-
+__pycache__
 /Java/Leccion01/MundoPc/nbproject/private/
 /Java/Leccion01/MundoPc/build/
 /nbproject/private/

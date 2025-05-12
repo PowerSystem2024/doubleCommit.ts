@@ -15,10 +15,10 @@ try:
             resistros = cursor.fetchone()
             print(resistros)
             # Obtener los resultados (Todos)
-            # personas = cursor.fetchall()
+            personas = cursor.fetchall()
 
-            # for persona in personas:
-            #     print(persona)
+            for persona in personas:
+                print(persona)
 
 
 except Exception as e:

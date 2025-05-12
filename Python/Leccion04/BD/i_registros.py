@@ -11,7 +11,8 @@ try:
             INSERT INTO persona (nombre, apellido, email)
                 VALUES (%s, %s, %s)
             """
-            entrada = input("Inserte nombre, apellido e email (separado por coma): ")
+            entrada = input("Inserte nombre, apellido e email (separado por coma):\n")
+
             valores = tuple(entrada.split(", "))
             print(valores)
             # conexion.commit() esto se utiliza para guardar los cambios en la base de datos
