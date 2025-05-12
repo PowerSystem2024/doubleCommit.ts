@@ -1,11 +1,4 @@
 {
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "python.REPL.enableREPLSmartSend": false,
-  "[python]": {
-    "editor.formatOnType": true,
-    "editor.defaultFormatter": "ms-python.black-formatter",
-    "editor.formatOnSave": true
-  },
-  "liveServer.settings.port": 5501
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
