@@ -1,90 +1,136 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Piedra, Papel o Tijera</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      background-color: #f0f0f0;
-      padding: 30px;
-    }
-
-    h1 {
-      color: #333;
-    }
-
-    .opciones {
-      margin: 20px;
-    }
-
-    .boton {
-      font-size: 2rem;
-      margin: 10px;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: transform 0.2s;
-    }
-
-    .boton:hover {
-      transform: scale(1.1);
-    }
-
-    #resultado {
-      margin-top: 30px;
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-  </style>
-</head>
-
-<body>
-  <h1>✊ Piedra, ✋ Papel o ✌️ Tijera</h1>
-  <div class="opciones">
-    <h1>HAS TU ELECCION, ELIGI CON SABIDURIA</h1>
-    <button class="boton" onclick="jugar(1)">✊<BR> PIEDRA</BR></button>
-    <button class="boton" onclick="jugar(2)">✋<BR> PAPEL</BR> </button>
-    <button class="boton" onclick="jugar(3)">✌️ <BR>TIJERA</BR> </button>
-  </div>
-  <div id="resultado"></div>
-
-  <script>
-    function eleccion(opcion) {
-      if (opcion == 1) return "✊ Piedra";
-      if (opcion == 2) return "✋ Papel";
-      if (opcion == 3) return "✌️ Tijera";
-    }
-
-    function random(min, max) {
-      return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
-
-    function jugar(jugador) {
-      const pc = random(1, 3);
-
-      let resultado = `Vos elegiste: ${eleccion(jugador)}<br>`;
-      resultado += `La PC eligió: ${eleccion(pc)}<br>`;
-
-      if (jugador === pc) {
-        resultado += "EMPATE";
-      } else if (
-        (jugador === 1 && pc === 3) ||
-        (jugador === 2 && pc === 1) ||
-        (jugador === 3 && pc === 2)
-      ) {
-        resultado += "GANASTE!🎉";
-      } else {
-        resultado += "PERDISTE";
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedra, Papel o Tijera</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #f0f0f0;
+        padding: 30px;
       }
 
-      document.getElementById("resultado").innerHTML = resultado;
-    }
-  </script>
-</body>
+      h1 {
+        color: #333;
+      }
+
+      .opciones {
+        margin: 20px;
+      }
+
+      .boton {
+        font-size: 2rem;
+        margin: 10px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: transform 0.2s;
+      }
+
+      .boton:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+      }
+
+      .boton:hover:enabled {
+        transform: scale(1.1);
+      }
+
+      #resultado {
+        margin-top: 30px;
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+
+      #reiniciar {
+        margin-top: 20px;
+        font-size: 1rem;
+        padding: 10px 20px;
+        background-color: #d33;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        display: none;
+      }
+
+      #reiniciar:hover {
+        background-color: #a00;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>✊ Piedra, ✋ Papel o ✌️ Tijera</h1>
+    <div class="opciones">
+      <h1>HACÉ TU ELECCIÓN, ELEGÍ CON SABIDURÍA</h1>
+      <button class="boton" id="btn1" onclick="jugar(1)">✊<br>PIEDRA</button>
+      <button class="boton" id="btn2" onclick="jugar(2)">✋<br>PAPEL</button>
+      <button class="boton" id="btn3" onclick="jugar(3)">✌️<br>TIJERA</button>
+    </div>
+
+    <div id="resultado"></div>
+
+    <button id="reiniciar" onclick="reiniciarJuego()">🔄 Reiniciar juego</button>
+
+    <script>
+      function eleccion(opcion) {
+        if (opcion == 1) return "✊ Piedra";
+        if (opcion == 2) return "✋ Papel";
+        if (opcion == 3) return "✌️ Tijera";
+      }
+
+      function random(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+
+      function jugar(jugador) {
+        const pc = random(1, 3);
+
+        let resultado = `Vos elegiste: ${eleccion(jugador)}<br>`;
+        resultado += `La PC eligió: ${eleccion(pc)}<br>`;
+
+        if (jugador === pc) {
+          resultado += "🔥 EMPATE";
+        } else if (
+          (jugador === 1 && pc === 3) ||
+          (jugador === 2 && pc === 1) ||
+          (jugador === 3 && pc === 2)
+        ) {
+          resultado += "🎉 ¡GANASTE!";
+        } else {
+          resultado += "💀 PERDISTE";
+        }
+
+        document.getElementById("resultado").innerHTML = resultado;
+
+        // Mostrar el botón de reinicio y desactivar los de juego
+        document.getElementById("reiniciar").style.display = "inline-block";
+        desactivarBotones();
+      }
+
+      function reiniciarJuego() {
+        document.getElementById("resultado").innerHTML = "";
+        document.getElementById("reiniciar").style.display = "none";
+        activarBotones();
+      }
+
+      function desactivarBotones() {
+        document.getElementById("btn1").disabled = true;
+        document.getElementById("btn2").disabled = true;
+        document.getElementById("btn3").disabled = true;
+      }
+
+      function activarBotones() {
+        document.getElementById("btn1").disabled = false;
+        document.getElementById("btn2").disabled = false;
+        document.getElementById("btn3").disabled = false;
+      }
+    </script>
+  </body>
 
 </html>
