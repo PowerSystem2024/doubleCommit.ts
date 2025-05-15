@@ -1,136 +1,302 @@
 <!DOCTYPE html>
 <html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Piedra, Papel o Tijera - Windows 98</title>
+  <style>
+    body {
+      font-family: 'MS Sans Serif', 'Segoe UI', Tahoma, sans-serif;
+      text-align: center;
+      background-color: #008080;
+      color: #000;
+      padding: 20px;
+      user-select: none;
+    }
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Piedra, Papel o Tijera</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        text-align: center;
-        background-color: #f0f0f0;
-        padding: 30px;
-      }
+    .window {
+      background-color: #c0c0c0;
+      border: 2px solid;
+      border-color: #dfdfdf #000 #000 #dfdfdf;
+      box-shadow: inset 1px 1px 0px 1px #fff, 1px 1px 0 1px #000;
+      width: 90%;
+      max-width: 500px;
+      margin: 30px auto;
+      padding: 2px;
+    }
 
-      h1 {
-        color: #333;
-      }
+    .title-bar {
+      background: linear-gradient(90deg, #000080, #1084d0);
+      color: white;
+      font-weight: bold;
+      padding: 3px 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-      .opciones {
-        margin: 20px;
-      }
+    .title-bar-text {
+      margin: 0;
+      font-size: 13px;
+    }
 
-      .boton {
-        font-size: 2rem;
-        margin: 10px;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 10px;
-        cursor: pointer;
-        transition: transform 0.2s;
-      }
+    .title-bar-icon {
+      height: 14px;
+      width: 14px;
+      background-color: #c0c0c0;
+      display: inline-block;
+      margin-right: 4px;
+      border: 1px outset #fff;
+    }
 
-      .boton:disabled {
-        background-color: #ccc;
-        cursor: not-allowed;
-      }
+    .title-bar-controls button {
+      width: 14px;
+      height: 14px;
+      border: 1px solid;
+      border-color: #fff #000 #000 #fff;
+      background-color: #c0c0c0;
+      margin-left: 2px;
+      position: relative;
+      font-size: 9px;
+      line-height: 0;
+      padding: 0;
+    }
 
-      .boton:hover:enabled {
-        transform: scale(1.1);
-      }
+    .window-body {
+      margin: 8px;
+      padding: 8px;
+      background-color: #c0c0c0;
+    }
 
-      #resultado {
-        margin-top: 30px;
-        font-size: 1.5rem;
-        font-weight: bold;
-      }
+    h1 {
+      color: #000;
+      font-size: 16px;
+      text-shadow: 1px 1px 0 #fff;
+      margin: 0 0 12px 0;
+    }
 
-      #reiniciar {
-        margin-top: 20px;
-        font-size: 1rem;
-        padding: 10px 20px;
-        background-color: #d33;
-        color: white;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        display: none;
-      }
+    .opciones {
+      margin: 15px 0;
+    }
 
-      #reiniciar:hover {
-        background-color: #a00;
-      }
-    </style>
-  </head>
+    .boton {
+      font-family: 'MS Sans Serif', 'Segoe UI', Tahoma, sans-serif;
+      font-size: 1.2rem;
+      margin: 10px;
+      padding: 8px 16px;
+      background-color: #c0c0c0;
+      border: 2px solid;
+      border-color: #fff #000 #000 #fff;
+      box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px #808080, inset 2px 2px #dfdfdf;
+      cursor: pointer;
+    }
 
-  <body>
-    <h1>✊ Piedra, ✋ Papel o ✌️ Tijera</h1>
-    <div class="opciones">
-      <h1>HACÉ TU ELECCIÓN, ELEGÍ CON SABIDURÍA</h1>
-      <button class="boton" id="btn1" onclick="jugar(1)">✊<br>PIEDRA</button>
-      <button class="boton" id="btn2" onclick="jugar(2)">✋<br>PAPEL</button>
-      <button class="boton" id="btn3" onclick="jugar(3)">✌️<br>TIJERA</button>
+    .boton:active:enabled {
+      border-color: #000 #fff #fff #000;
+      box-shadow: inset 1px 1px #0a0a0a, inset -1px -1px #fff, inset 2px 2px #808080, inset -2px -2px #dfdfdf;
+    }
+
+    .boton:disabled {
+      color: #808080;
+      text-shadow: 1px 1px 0 #fff;
+      cursor: not-allowed;
+    }
+
+    #resultado {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      background-color: #fff;
+      border: inset 2px #c0c0c0;
+      padding: 8px;
+      min-height: 60px;
+      text-align: left;
+    }
+
+    #reiniciar, #reiniciarTodo {
+      font-family: 'MS Sans Serif', 'Segoe UI', Tahoma, sans-serif;
+      margin-top: 10px;
+      font-size: 0.9rem;
+      padding: 6px 12px;
+      background-color: #c0c0c0;
+      border: 2px solid;
+      border-color: #fff #000 #000 #fff;
+      box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px #808080, inset 2px 2px #dfdfdf;
+      cursor: pointer;
+      display: none;
+    }
+
+    #reiniciar:active, #reiniciarTodo:active {
+      border-color: #000 #fff #fff #000;
+      box-shadow: inset 1px 1px #0a0a0a, inset -1px -1px #fff, inset 2px 2px #808080, inset -2px -2px #dfdfdf;
+    }
+
+    #puntos {
+      margin-top: 10px;
+      font-size: 0.95rem;
+      background-color: #fff;
+      border: inset 2px #c0c0c0;
+      padding: 8px;
+      text-align: left;
+    }
+
+    .status-bar {
+      border-top: 1px solid #808080;
+      margin-top: 10px;
+      padding-top: 5px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+    }
+
+    .desktop-icon {
+      display: inline-block;
+      margin: 10px;
+      text-align: center;
+      width: 75px;
+    }
+
+    .desktop-icon div {
+      width: 32px;
+      height: 32px;
+      background-color: #fff;
+      border: 1px solid #000;
+      margin: 0 auto;
+    }
+
+    .desktop-icon p {
+      font-size: 11px;
+      margin: 0;
+      color: white;
+      text-shadow: 1px 1px 1px black;
+    }
+  </style>
+</head>
+<body>
+  <!-- Ícono del escritorio -->
+  <div class="desktop-icon">
+    <div><div style="font-size: 20px; line-height: 32px;">✂️</div></div>
+    <p>Piedra, Papel o Tijera</p>
+  </div>
+
+  <div class="window">
+    <div class="title-bar">
+      <div class="title-bar-text">
+        <span class="title-bar-icon"></span>
+        Piedra, Papel o Tijera
+      </div>
+      <div class="title-bar-controls">
+        <button>_</button>
+        <button>□</button>
+        <button>X</button>
+      </div>
     </div>
+    <div class="window-body">
+      <h1>✊ Piedra, ✋ Papel o ✌️ Tijera</h1>
+      <div class="opciones">
+        <h1 style="font-size: 14px;">HACÉ TU ELECCIÓN, ELEGÍ CON SABIDURÍA</h1>
+        <button class="boton" id="btn1" onclick="jugar(1)">✊<br>PIEDRA</button>
+        <button class="boton" id="btn2" onclick="jugar(2)">✋<br>PAPEL</button>
+        <button class="boton" id="btn3" onclick="jugar(3)">✌️<br>TIJERA</button>
+      </div>
+      <div id="resultado">
+        Haga clic en un botón para jugar...
+      </div>
+      <div id="puntos">
+        👤 Jugador: <span id="pJugador">0</span><br>
+        💻 PC: <span id="pPC">0</span>
+      </div>
+      <button id="reiniciar" onclick="habilitarBotones()">🔁 Jugar otra ronda</button>
+      <button id="reiniciarTodo" onclick="reiniciarTodo()">🧼 Reiniciar todo</button>
 
-    <div id="resultado"></div>
+      <div class="status-bar">
+        <span>Listo</span>
+        <span id="clock">12:00:00 PM</span>
+      </div>
+    </div>
+  </div>
 
-    <button id="reiniciar" onclick="reiniciarJuego()">🔄 Reiniciar juego</button>
+  <script>
+    let puntosJugador = 0;
+    let puntosPC = 0;
 
-    <script>
-      function eleccion(opcion) {
-        if (opcion == 1) return "✊ Piedra";
-        if (opcion == 2) return "✋ Papel";
-        if (opcion == 3) return "✌️ Tijera";
+    /*
+    # Opción para renderizar la elección
+    */
+    function eleccion(opcion) {
+      if (opcion == 1) return "✊ Piedra";
+      if (opcion == 2) return "✋ Papel";
+      if (opcion == 3) return "✌️ Tijera";
+    }
+
+    function random(min, max) {
+      return Math.floor(Math.random() * max) + min;
+    }
+
+    function jugar(jugador) {
+      const pc = random(1, 3);
+      let resultado = `Vos elegiste: ${eleccion(jugador)}<br>`;
+      resultado += `La PC eligió: ${eleccion(pc)}<br><br>`;
+
+      if (jugador === pc) {
+        resultado += "🔥 EMPATE";
+      } else if (
+        (jugador === 1 && pc === 3) ||
+        (jugador === 2 && pc === 1) ||
+        (jugador === 3 && pc === 2)
+      ) {
+        resultado += "🎉 ¡GANASTE!";
+        puntosJugador++;
+      } else {
+        resultado += "💀 PERDISTE";
+        puntosPC++;
       }
 
-      function random(min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-      }
+      document.getElementById("resultado").innerHTML = resultado;
+      document.getElementById("pJugador").textContent = puntosJugador;
+      document.getElementById("pPC").textContent = puntosPC;
 
-      function jugar(jugador) {
-        const pc = random(1, 3);
+      document.getElementById("reiniciar").style.display = "inline-block";
+      document.getElementById("reiniciarTodo").style.display = "inline-block";
+      desactivarBotones();
+    }
 
-        let resultado = `Vos elegiste: ${eleccion(jugador)}<br>`;
-        resultado += `La PC eligió: ${eleccion(pc)}<br>`;
+    function desactivarBotones() {
+      document.getElementById("btn1").disabled = true;
+      document.getElementById("btn2").disabled = true;
+      document.getElementById("btn3").disabled = true;
+    }
 
-        if (jugador === pc) {
-          resultado += "🔥 EMPATE";
-        } else if (
-          (jugador === 1 && pc === 3) ||
-          (jugador === 2 && pc === 1) ||
-          (jugador === 3 && pc === 2)
-        ) {
-          resultado += "🎉 ¡GANASTE!";
-        } else {
-          resultado += "💀 PERDISTE";
-        }
+    function habilitarBotones() {
+      document.getElementById("btn1").disabled = false;
+      document.getElementById("btn2").disabled = false;
+      document.getElementById("btn3").disabled = false;
+      document.getElementById("resultado").innerHTML = "Haga clic en un botón para jugar...";
+      document.getElementById("reiniciar").style.display = "none";
+    }
 
-        document.getElementById("resultado").innerHTML = resultado;
+    function reiniciarTodo() {
+      puntosJugador = 0;
+      puntosPC = 0;
+      document.getElementById("pJugador").textContent = "0";
+      document.getElementById("pPC").textContent = "0";
+      habilitarBotones();
+    }
 
-        // Mostrar el botón de reinicio y desactivar los de juego
-        document.getElementById("reiniciar").style.display = "inline-block";
-        desactivarBotones();
-      }
+    function actualizarReloj() {
+      const ahora = new Date();
+      let horas = ahora.getHours();
+      const minutos = ahora.getMinutes().toString().padStart(2, '0');
+      const segundos = ahora.getSeconds().toString().padStart(2, '0');
+      const ampm = horas >= 12 ? 'PM' : 'AM';
 
-      function reiniciarJuego() {
-        document.getElementById("resultado").innerHTML = "";
-        document.getElementById("reiniciar").style.display = "none";
-        activarBotones();
-      }
+      horas = horas % 12;
+      horas = horas ? horas : 12;
 
-      function desactivarBotones() {
-        document.getElementById("btn1").disabled = true;
-        document.getElementById("btn2").disabled = true;
-        document.getElementById("btn3").disabled = true;
-      }
+      document.getElementById('clock').textContent = `${horas}:${minutos}:${segundos} ${ampm}`;
+      setTimeout(actualizarReloj, 1000);
+    }
 
-      function activarBotones() {
-        document.getElementById("btn1").disabled = false;
-        document.getElementById("btn2").disabled = false;
-        document.getElementById("btn3").disabled = false;
-      }
-    </script>
-  </body>
-
+    actualizarReloj();
+  </script>
+</body>
 </html>
