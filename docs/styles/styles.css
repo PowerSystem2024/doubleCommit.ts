@@ -94,6 +94,13 @@ h1 {
   cursor: not-allowed;
 }
 
+.menu-nav {
+  width: 100%;
+  border: 1px solid;
+  border-color: #fff #000 #000 #fff;
+  background-color: #c0c0c0;
+}
+
 #resultado {
   height: 100px;
   margin-top: 20px;
@@ -308,6 +315,12 @@ footer aside {
 .navegador-botones {
   display: flex;
   gap: 6px;
+}
+
+.direccion-url {
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .navegador-boton {

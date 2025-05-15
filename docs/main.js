@@ -8,6 +8,7 @@ onload = () => {
   const botonCerrarVentana = document.getElementById("btnX");
   const resultadoJuego = document.getElementById("resultado");
   const ie = document.getElementById("ie");
+  const iframe = document.getElementById("navegador-wrapper");
   const inico = document.getElementById("inicio");
   const menuInicio = document.getElementById("menu-inicio");
   const opcionBoton = {
@@ -171,23 +172,26 @@ onload = () => {
     setTimeout(actualizarReloj, 1000);
   }
 
-  const manejarBotonInicio = ( ) => {
+  const manejarBotonInicio = () => {
     if (!menuInicio.checkVisibility()) {
-      menuInicio.style.display = "flex"
+      menuInicio.style.display = "flex";
     } else {
-      menuInicio.style.display = "none"
+      menuInicio.style.display = "none";
     }
-  }
+  };
 
   const crearVentanaNavegador = () => {
     // Crear wrapper principal
     const url = "https://neo-wifi.vercel.app";
     const wrapper = document.createElement("div");
     wrapper.className = "navegador-wrapper";
+    wrapper.id = "navegador-wrapper";
 
     // Crear barra superior estilo navegador
     const barra = document.createElement("div");
+    const mneuNav = document.createElement("div");
     barra.className = "navegador-barra";
+    mneuNav.className = "menu-navegador";
     barra.innerHTML = `
       <span style="display: flex; align-items: center; gap: 4px;">
       <img src="https://win98icons.alexmeub.com/icons/png/html2-2.png" width="20" height="20" />
@@ -195,6 +199,34 @@ onload = () => {
       <div class="navegador-botones">
         <div class="navegador-boton" id="cerrarBtn"></div>
       </div>
+    `;
+    mneuNav.innerHTML = `
+     <form style="display: flex; align-items: center; background-color: #c0c0c0; padding: 4px; border: 2px inset #fff; font-family: 'MS Sans Serif', sans-serif;">
+  <label style="margin-right: 8px;">Address:</label>
+  <div style="display: flex; align-items: center; background-color: #fff; border: 2px inset #808080; padding: 2px; flex: 1;">
+    <img src="https://win98icons.alexmeub.com/icons/png/html2-2.png" width="20" height="20" style="margin-right: 4px;" />
+    <input
+      type="text"
+      name="address"
+      value="${url}"
+      style="flex: 1; border: none; outline: none; font-size: 12px; font-family: 'MS Sans Serif', sans-serif; background-color: #fff;"
+    />
+  </div>
+  <button type="submit" style="
+    margin-left: 8px;
+    padding: 2px 12px;
+    background-color: #c0c0c0;
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #808080;
+    border-right: 2px solid #808080;
+    font-size: 12px;
+    font-family: 'MS Sans Serif', sans-serif;
+    cursor: pointer;
+  ">
+    Go
+  </button>
+</form>
     `;
 
     // Crear iframe
@@ -204,6 +236,7 @@ onload = () => {
 
     // Agregar al DOM
     wrapper.appendChild(barra);
+    wrapper.appendChild(mneuNav);
     wrapper.appendChild(iframe);
     document.body.appendChild(wrapper);
 
@@ -240,12 +273,11 @@ onload = () => {
       crearVentanaNavegador();
     });
     inico.onclick = () => {
-      manejarBotonInicio()
-    }
+      manejarBotonInicio();
+    };
   };
 
   arrastrarVentana(ventana);
-  arrastrarVentana(ie);
   actualizarReloj();
   manejarEventosBotones();
 };
