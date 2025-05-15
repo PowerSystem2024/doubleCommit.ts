@@ -40,7 +40,11 @@ onload = () => {
   const cerrarVentana = () => {
     ventana.style.display = "none";
   };
-
+  /**
+   * Método para arrastrar ventanas en el DOM según su posición en el eje { x, y }
+   * @param {Element} ventana 
+   * @returns {MouseEvent}
+   */
   const arrastrarVentana = (ventana) => {
     let offset = { x: 0, y: 0 };
     let limpiarMovimiento = null;
@@ -239,6 +243,7 @@ onload = () => {
     wrapper.appendChild(mneuNav);
     wrapper.appendChild(iframe);
     document.body.appendChild(wrapper);
+    arrastrarVentana(wrapper)
 
     // Cerrar al hacer click en el botón
     barra.querySelector("#cerrarBtn").textContent = "X";
