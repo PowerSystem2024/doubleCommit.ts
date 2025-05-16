@@ -205,32 +205,32 @@ onload = () => {
       </div>
     `;
     mneuNav.innerHTML = `
-     <form style="display: flex; align-items: center; background-color: #c0c0c0; padding: 4px; border: 2px inset #fff; font-family: 'MS Sans Serif', sans-serif;">
-  <label style="margin-right: 8px;">Address:</label>
-  <div style="display: flex; align-items: center; background-color: #fff; border: 2px inset #808080; padding: 2px; flex: 1;">
-    <img src="https://win98icons.alexmeub.com/icons/png/html2-2.png" width="20" height="20" style="margin-right: 4px;" />
-    <input
+    <form style="display: flex; align-items: center; background-color: #c0c0c0; padding: 4px; border: 2px inset #fff; font-family: 'MS Sans Serif', sans-serif;">
+      <label style="margin-right: 8px;">Address:</label>
+      <div style="display: flex; align-items: center; background-color: #fff; border: 2px inset #808080; padding: 2px; flex: 1;">
+      <img src="https://win98icons.alexmeub.com/icons/png/html2-2.png" width="20" height="20" style="margin-right: 4px;" />
+      <input
       type="text"
       name="address"
       value="${url}"
       style="flex: 1; border: none; outline: none; font-size: 12px; font-family: 'MS Sans Serif', sans-serif; background-color: #fff;"
-    />
-  </div>
-  <button type="submit" style="
-    margin-left: 8px;
-    padding: 2px 12px;
-    background-color: #c0c0c0;
-    border-top: 2px solid #fff;
-    border-left: 2px solid #fff;
-    border-bottom: 2px solid #808080;
-    border-right: 2px solid #808080;
-    font-size: 12px;
-    font-family: 'MS Sans Serif', sans-serif;
-    cursor: pointer;
-  ">
-    Go
-  </button>
-</form>
+      />
+      </div>
+      <button type="submit" style="
+        margin-left: 8px;
+        padding: 2px 12px;
+        background-color: #c0c0c0;
+        border-top: 2px solid #fff;
+        border-left: 2px solid #fff;
+        border-bottom: 2px solid #808080;
+        border-right: 2px solid #808080;
+        font-size: 12px;
+        font-family: 'MS Sans Serif', sans-serif;
+        cursor: pointer;
+      ">
+        Go
+      </button>
+    </form>
     `;
 
     // Crear iframe
