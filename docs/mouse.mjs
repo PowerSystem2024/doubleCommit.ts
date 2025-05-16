@@ -1,3 +1,8 @@
+/**
+ * Método para obtener el eje {x, y} y devolverlo en la función callback
+ * @param {callback} cuandoMueva 
+ * @returns {Event}
+ */
 export const escucharMovimientoMouse = (cuandoMueva) => {
     const actualizarEje = (event) => {
       const eje = { x: event.clientX, y: event.clientY };
@@ -12,4 +17,3 @@ export const escucharMovimientoMouse = (cuandoMueva) => {
       }
     };
   };
-  

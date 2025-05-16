@@ -81,9 +81,9 @@ onload = () => {
   };
 
   /**
-   *
+   * Método que retorna un string de acuerdo a la condición de la opción
    * @param {number} opcion
-   * @returns string
+   * @returns {string}
    */
   function eleccion(opcion) {
     if (opcion == 1) return "✊ Piedra";
