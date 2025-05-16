@@ -1,9 +1,9 @@
 /**
  * Función para crear dialogo (pop-up) ventana emergente
- * @param {string} resultadoDelJuego 
+ * @param {string} contenido 
  * @returns {HTMLDialogElement}
  */
-export const abrirDialogo = (resultadoDelJuego = "") => {
+export const abrirDialogo = (contenido = "") => {
     const dialogo = document.createElement("dialog");
     document.body.appendChild(dialogo)
     dialogo.showModal()
@@ -13,7 +13,7 @@ export const abrirDialogo = (resultadoDelJuego = "") => {
             <p>Resultado</p>
             <span>X</span>
         </header>
-        <p style="padding: 24px">${resultadoDelJuego}</p>
+        <p style="padding: 24px">${contenido}</p>
     </div>
     `
     cerrarDialogo()
