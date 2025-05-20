@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Problema de las N Reinas - Paso a Paso</title>
+  <style>
+    body {
+      background-color: #008080;
+      font-family: "MS Sans Serif", sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .ventana {
+      background-color: #c0c0c0;
+      border: 2px solid #808080;
+      width: fit-content;
+      padding: 10px;
+      box-shadow: inset -1px -1px 0 #fff, inset 1px 1px 0 #000;
+    }
+
+    .titulo {
+      background-color: navy;
+      color: white;
+      padding: 5px;
+      font-weight: bold;
+    }
+
+    .tablero {
+      display: grid;
+      margin-top: 10px;
+    }
+
+    .celda {
+      width: 40px;
+      height: 40px;
+      text-align: center;
+      vertical-align: middle;
+      line-height: 40px;
+      border: 1px solid #000;
+      font-size: 20px;
+    }
+
+    .blanca {
+      background-color: #ffffff;
+    }
+
+    .gris {
+      background-color: #d3d3d3;
+    }
+
+    .reina {
+      color: darkred;
+    }
+
+    .output {
+      margin-top: 10px;
+      background: #fff;
+      padding: 10px;
+      font-family: monospace;
+      border: 2px inset #fff;
+    }
+
+    button, input {
+      margin-top: 10px;
+      padding: 5px 10px;
+      font-family: "MS Sans Serif";
+      background: #c0c0c0;
+      border: 2px outset #fff;
+      cursor: pointer;
+    }
+
+    input {
+      width: 50px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="ventana">
+    <div class="titulo">N-Reinas Paso a Paso (Estilo Windows 97)</div>
+    <label>Valor de N (mínimo 8): </label>
+    <input type="number" id="valorN" min="8" value="8">
+    <button onclick="iniciarAnimacion()">Iniciar Resolución</button>
+    <div id="tablero" class="tablero"></div>
+    <div class="output" id="salida"></div>
+  </div>
+
+  <script>
+    let N = 8;
+    let tablero = [];
+    let posiciones = [];
+    const tableroHTML = document.getElementById('tablero');
+    const salida = document.getElementById('salida');
+    const delay = 500; // Milisegundos entre pasos (medio segundo)
+
+    // Dibuja el tablero en pantalla con estilo retro
+    function dibujarTablero() {
+      tableroHTML.innerHTML = '';
+      tableroHTML.style.gridTemplateColumns = `repeat(${N}, 40px)`;
+
+      for (let i = 0; i < N; i++) {
+        for (let j = 0; j < N; j++) {
+          const celda = document.createElement('div');
+          celda.classList.add('celda');
+          celda.classList.add((i + j) % 2 === 0 ? 'blanca' : 'gris');
+          if (tablero[i][j] === 'Q') {
+            celda.textContent = '♕';
+            celda.classList.add('reina');
+          }
+          tableroHTML.appendChild(celda);
+        }
+      }
+    }
+
+    // Verifica si es seguro colocar una reina en fila, col
+    function esSeguro(fila, col) {
+      for (let i = 0; i < fila; i++) {
+        if (
+          posiciones[i] === col ||                         // misma columna
+          posiciones[i] - i === col - fila ||              // misma diagonal \
+          posiciones[i] + i === col + fila                 // misma diagonal /
+        ) return false;
+      }
+      return true;
+    }
+
+    // Algoritmo recursivo con animación
+    async function resolverPasoAPaso(fila) {
+      if (fila === N) {
+        // Solución completa encontrada
+        salida.innerHTML = `<strong>✔ Reinas colocadas correctamente.</strong><br>📌 Posiciones (columna por fila): [${posiciones.join(', ')}]`;
+        return true;
+      }
+
+      for (let col = 0; col < N; col++) {
+        if (esSeguro(fila, col)) {
+          // Colocar reina y actualizar visual
+          tablero[fila][col] = 'Q';
+          posiciones[fila] = col;
+          dibujarTablero();
+          await new Promise(resolve => setTimeout(resolve, delay));
+
+          if (await resolverPasoAPaso(fila + 1)) return true;
+
+          // Backtrack: quitar reina si no funciona
+          tablero[fila][col] = '.';
+          posiciones[fila] = -1;
+          dibujarTablero();
+          await new Promise(resolve => setTimeout(resolve, delay));
+        }
+      }
+
+      return false; // No hay posición válida en esta fila
+    }
+
+    // Inicializa e inicia la animación
+    function iniciarAnimacion() {
+      N = parseInt(document.getElementById('valorN').value);
+      if (N < 8) {
+        alert("Por favor ingresa un valor de N igual o mayor a 8.");
+        return;
+      }
+
+      // Inicializar tablero vacío
+      tablero = Array(N).fill().map(() => Array(N).fill('.'));
+      posiciones = Array(N).fill(-1);
+      salida.innerHTML = '⏳ Resolviendo...';
+      dibujarTablero();
+      resolverPasoAPaso(0);
+    }
+  </script>
+</body>
+</html>
