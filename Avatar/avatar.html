@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>LA LEYENDA DE AANG: DOUBLE COMMIT 🌍🌬️🌊🔥</title>
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <h1>Avatar</h1>
+    <!-- Esto es estatico, No cambia el h1 se utiliza una sola vez  -->
+
+    <section id="seleccionar-personaje">
+      <h2>Elige tu personaje</h2>
+
+
+
+
+
+
+
+      <label for="zuko">
+        Zuko
+        <img
+        width="40"
+        height="40"
+        id="Zuko🔥"
+        src="public/avatar-zuko.webp"
+        alt=""
+        />
+        <input type="radio" name="personaje" id="zuko">
+      </label>
+      
+      <!-- Esta etiquetas es para darle un indicador a los usuarios de su selección -->
+      <label for="katara">
+        Katara💧
+        <img
+        width="40"
+        height="40"
+        id="Katara💧"
+        src="public/images.jpg"
+        alt=""
+        />
+        <input type="radio" name="personaje" id="katara">
+      </label>
+
+      <label for="aang">
+        Aang 🌬️
+        <img
+        width="40"
+        height="40"
+        id="Aang 🌬️"
+        src="public/images (1).jpg"
+        alt=""
+        />
+        <input type="radio" name="personaje" id="aang">
+      </label>
+
+
+      <label for="toph">
+        Toph 🌍
+        <img
+        width="40"
+        height="40"
+        id="Toph 🌍"
+        src="public/Toph_Beifong.webp"
+        alt=""
+        />
+        <input type="radio" name="personaje" id="toph">
+      </label>
+
+      <button id="boton-personaje">Seleccionar</button>
+      <!-- El botón de seleccionar el personaje  -->
+    </section>
+    <section id="seleccionar-ataque">
+      <h2>Elige tu ataque</h2>
+      <!-- Se puede utilizar varias veces -->
+      <p>Tu personaje tiene <span> 3</span> vidas</p>
+      <!-- Pero esto debe ser dinamico para que cambien el numero de las vidas -->
+      <p>Los personajes del enemigo tienen <span> 3</span> vidas</p>
+      <!-- Con la etiqueta spam vamos a modificar el numero de vidas-->
+
+      <p>
+        <button id="boton-fuego">Fuego🔥</button>
+        <button id="boton-agua">Agua🌊</button>
+        <button id="boton-tierra">Tierra 🌍</button>
+        <button id="boton-aire">Aire 🌬️</button>
+      </p>
+    </section>
+    <section id="mensajes">
+      <p>
+        Tu personaje atacó con todo el poder del FUEGO, el personaje del enemigo
+        atacó con el medio poder de la Tierra -GANASTE
+      </p>
+    </section>
+    <section id="reiniciar">
+      <button id="reiniciar">Reiniciar</button>
+    </section>
+    <script src="./js/avatar.js" type="module"></script>
+  </body>
+</html>
