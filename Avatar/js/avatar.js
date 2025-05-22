@@ -1,32 +1,30 @@
 onload = () => {
-    function seleccionarPersonajeJugador() {
-    const zuko = document.getElementById('zuko');
-    const katara = document.getElementById('katara');
-    const aang = document.getElementById('aang');
-    const toph = document.getElementById('toph');
+  function seleccionarPersonajeJugador() {
+    const zuko = document.getElementById("zuko");
+    const katara = document.getElementById("katara");
+    const aang = document.getElementById("aang");
+    const toph = document.getElementById("toph");
 
-
-    function mostrarPersonaje(text=""){
-        alert(text)
+    function mostrarPersonaje(text = "") {
+      alert(text);
     }
-    let personajeSeleccionado = '';
+    let personajeSeleccionado = "";
 
     if (zuko.checked) {
-        mostrarPersonaje("Zuko🔥")
+      mostrarPersonaje("Zuko🔥");
     } else if (katara.checked) {
-        mostrarPersonaje("Katara💧")
+      mostrarPersonaje("Katara💧");
     } else if (aang.checked) {
-        mostrarPersonaje("Aang 🌬️")
+      mostrarPersonaje("Aang 🌬️");
     } else if (toph.checked) {
-        mostrarPersonaje("Toph 🌍")
+      mostrarPersonaje("Toph 🌍");
     } else {
-        alert('Por favor selecciona un personaje.');
-        return;
+      alert("Por favor selecciona un personaje.");
+      return;
     }
+  }
 
-}
 
-let botonPersonajeJugador = document.getElementById('boton-personaje');
-botonPersonajeJugador.addEventListener('click', seleccionarPersonajeJugador);
-
-}
+  let botonPersonajeJugador = document.getElementById("boton-personaje");
+  botonPersonajeJugador.addEventListener("click", seleccionarPersonajeJugador);
+};
