@@ -1,0 +1,252 @@
+[
+  {
+    "id": "dcdd0fad-a94c-4810-8acc-5f108d3b18c3",
+    "title": "The Shawshank Redemption",
+    "year": 1994,
+    "director": "Frank Darabont",
+    "duration": 142,
+    "poster": "https://i.ebayimg.com/images/g/4goAAOSwMyBe7hnQ/s-l1200.webp",
+    "genre": ["Drama"],
+    "rate": 9.3
+  },
+  {
+    "id": "c8a7d63f-3b04-44d3-9d95-8782fd7dcfaf",
+    "title": "The Dark Knight",
+    "year": 2008,
+    "director": "Christopher Nolan",
+    "duration": 152,
+    "poster": "https://i.ebayimg.com/images/g/yokAAOSw8w1YARbm/s-l1200.jpg",
+    "genre": ["Action", "Crime", "Drama"],
+    "rate": 9.3
+  },
+  {
+    "id": "5ad1a235-0d9c-410a-b32b-220d91689a08",
+    "title": "Inception",
+    "year": 2010,
+    "director": "Christopher Nolan",
+    "duration": 148,
+    "poster": "https://m.media-amazon.com/images/I/91Rc8cAmnAL._AC_UF1000,1000_QL80_.jpg",
+    "genre": ["Action", "Adventure", "Sci-Fi"],
+    "rate": 8.8
+  },
+  {
+    "id": "241bf55d-b649-4109-af7c-0e6890ded3fc",
+    "title": "Pulp Fiction",
+    "year": 1994,
+    "director": "Quentin Tarantino",
+    "duration": 154,
+    "poster": "https://www.themoviedb.org/t/p/original/vQWk5YBFWF4bZaofAbv0tShwBvQ.jpg",
+    "genre": ["Crime", "Drama"],
+    "rate": 8.9
+  },
+  {
+    "id": "9e6106f0-848b-4810-a11a-3d832a5610f9",
+    "title": "Forrest Gump",
+    "year": 1994,
+    "director": "Robert Zemeckis",
+    "duration": 142,
+    "poster": "https://i.ebayimg.com/images/g/qR8AAOSwkvRZzuMD/s-l1600.jpg",
+    "genre": ["Drama", "Romance"],
+    "rate": 8.8
+  },
+  {
+    "id": "7e3fd5ab-60ff-4ae2-92b6-9597f0308d1",
+    "title": "Gladiator",
+    "year": 2000,
+    "director": "Ridley Scott",
+    "duration": 155,
+    "poster": "https://img.fruugo.com/product/0/60/14417600_max.jpg",
+    "genre": ["Action", "Adventure", "Drama"],
+    "rate": 8.5
+  },
+  {
+    "id": "c906673b-3948-4402-ac7f-73ac3a9e3105",
+    "title": "The Matrix",
+    "year": 1999,
+    "director": "Lana Wachowski",
+    "duration": 136,
+    "poster": "https://i.ebayimg.com/images/g/QFQAAOSwAQpfjaA6/s-l1200.jpg",
+    "genre": ["Action", "Sci-Fi"],
+    "rate": 8.7
+  },
+  {
+    "id": "b6e03689-cccd-478e-8565-d92f40813b13",
+    "title": "Interstellar",
+    "year": 2014,
+    "director": "Christopher Nolan",
+    "duration": 169,
+    "poster": "https://m.media-amazon.com/images/I/91obuWzA3XL._AC_UF1000,1000_QL80_.jpg",
+    "genre": ["Adventure", "Drama", "Sci-Fi"],
+    "rate": 8.6
+  },
+  {
+    "id": "aa391090-b938-42eb-b520-86ea0aa3917b",
+    "title": "The Lord of the Rings: The Return of the King",
+    "year": 2003,
+    "director": "Peter Jackson",
+    "duration": 201,
+    "poster": "https://i.ebayimg.com/images/g/0hoAAOSwe7peaMLW/s-l1600.jpg",
+    "genre": ["Action", "Adventure", "Drama"],
+    "rate": 8.9
+  },
+  {
+    "id": "2e6900e2-0b48-4fb6-ad48-09c7086e54fe",
+    "title": "The Lion King",
+    "year": 1994,
+    "director": "Roger Allers, Rob Minkoff",
+    "duration": 88,
+    "poster": "https://m.media-amazon.com/images/I/81BMmrwSFOL._AC_UF1000,1000_QL80_.jpg",
+    "genre": ["Animation", "Adventure", "Drama"],
+    "rate": 8.5
+  },
+  {
+    "id": "04986507-b3ed-442c-8ae7-4c5df804f896",
+    "title": "The Avengers",
+    "year": 2012,
+    "director": "Joss Whedon",
+    "duration": 143,
+    "poster": "https://img.fruugo.com/product/7/41/14532417_max.jpg",
+    "genre": ["Action", "Adventure", "Sci-Fi"],
+    "rate": 8.0
+  },
+  {
+    "id": "7d2832f8-c70a-410e-8963-4c93bf36cc9c",
+    "title": "Jurassic Park",
+    "year": 1993,
+    "director": "Steven Spielberg",
+    "duration": 127,
+    "poster": "https://vice-press.com/cdn/shop/products/Jurassic-Park-Editions-poster-florey.jpg?v=1654518755&width=1024",
+    "genre": ["Adventure", "Sci-Fi"],
+    "rate": 8.1
+  },
+  {
+    "id": "ccf36f2e-8566-47f7-912d-9f4647250bc7",
+    "title": "Titanic",
+    "year": 1997,
+    "director": "James Cameron",
+    "duration": 195,
+    "poster": "https://i.pinimg.com/originals/42/42/65/4242658e6f1b0d6322a4a93e0383108b.png",
+    "genre": ["Drama", "Romance"],
+    "rate": 7.8
+  },
+  {
+    "id": "8fb17ae1-bdfe-45e5-a871-4772d7e526b8",
+    "title": "The Social Network",
+    "year": 2010,
+    "director": "David Fincher",
+    "duration": 120,
+    "poster": "https://i.pinimg.com/originals/7e/37/b9/7e37b994b613e94cba64f307b1983e39.jpg",
+    "genre": ["Biography", "Drama"],
+    "rate": 7.7
+  },
+  {
+    "id": "6a360a18-c645-4b47-9a7b-2a71babbf3e0",
+    "title": "Avatar",
+    "year": 2009,
+    "director": "James Cameron",
+    "duration": 162,
+    "poster": "https://i.etsystatic.com/35681979/r/il/dfe3ba/3957859451/il_fullxfull.3957859451_h27r.jpg",
+    "genre": ["Action", "Adventure", "Fantasy"],
+    "rate": 7.8
+  },
+  {
+    "id": "d1e42b3c-6587-4d2a-9b98-765fd9f2e4cf",
+    "title": "The Godfather",
+    "year": 1972,
+    "director": "Francis Ford Coppola",
+    "duration": 175,
+    "poster": "https://i.pinimg.com/736x/b0/21/fe/b021fe6711ec0a442420719e56633101.jpg",
+    "genre": ["Crime", "Drama"],
+    "rate": 9.2
+  },
+  {
+    "id": "0b3e44e2-b8c5-4b71-b8da-568a4e6e6a45",
+    "title": "The Godfather: Part II",
+    "year": 1974,
+    "director": "Francis Ford Coppola",
+    "duration": 202,
+    "poster": "https://i.pinimg.com/736x/4e/3f/41/4e3f41bab342202c89c677305ef4071c.jpg",
+    "genre": ["Crime", "Drama"],
+    "rate": 9.0
+  },
+  {
+    "id": "9f213a6e-4e2f-4dd8-9a74-3c73332b9428",
+    "title": "Schindler's List",
+    "year": 1993,
+    "director": "Steven Spielberg",
+    "duration": 195,
+    "poster": "https://pics.filmaffinity.com/schindler_s_list-473662617-mmed.jpg",
+    "genre": ["Biography", "Drama", "History"],
+    "rate": 9.0
+  },
+  {
+    "id": "4b2e5b1e-8439-44b2-9eb8-bac62de8285b",
+    "title": "Fight Club",
+    "year": 1999,
+    "director": "David Fincher",
+    "duration": 139,
+    "poster": "https://static.wikia.nocookie.net/cine/images/f/f8/Fight-Club-1999.jpg",
+    "genre": ["Drama"],
+    "rate": 8.8
+  },
+  {
+    "id": "3f8f4b62-2f7f-4e3f-930f-8b6345b962ad",
+    "title": "Se7en",
+    "year": 1995,
+    "director": "David Fincher",
+    "duration": 127,
+    "poster": "https://i.pinimg.com/originals/c7/ec/62/c7ec6285f6ba7fdbd29e3a9f3b5244f9.jpg",
+    "genre": ["Crime", "Drama", "Mystery"],
+    "rate": 8.6
+  },
+  {
+    "id": "4b7f6f1c-73f8-4e4b-949e-645c8dcb5c0a",
+    "title": "The Silence of the Lambs",
+    "year": 1991,
+    "director": "Jonathan Demme",
+    "duration": 118,
+    "poster": "https://m.media-amazon.com/images/I/81SVDO6WcrL._AC_UF894,1000_QL80_.jpg",
+    "genre": ["Crime", "Drama", "Thriller"],
+    "rate": 8.6
+  },
+  {
+    "id": "0d4b8a3c-73d5-4f41-9e8c-8e77a1f8d18d",
+    "title": "The Green Mile",
+    "year": 1999,
+    "director": "Frank Darabont",
+    "duration": 189,
+    "poster": "https://ymximages.s3.us-east-2.amazonaws.com/wp-content/uploads/2021/08/21163723/51GLlocYQ9L.jpg",
+    "genre": ["Crime", "Drama", "Fantasy"],
+    "rate": 8.6
+  },
+  {
+    "id": "c2e3c5e7-423f-4b2d-a5ec-b2e244a9e5f6",
+    "title": "Saving Private Ryan",
+    "year": 1998,
+    "director": "Steven Spielberg",
+    "duration": 169,
+    "poster": "https://pics.filmaffinity.com/saving_private_ryan-585301228-large.jpg",
+    "genre": ["Drama", "War"],
+    "rate": 8.6
+  },
+  {
+    "id": "e6e8d4f2-0e5e-4b72-b51f-47b3a8debf3d",
+    "title": "Spirited Away",
+    "year": 2001,
+    "director": "Hayao Miyazaki",
+    "duration": 125,
+    "poster": "https://i.pinimg.com/736x/8b/e9/aa/8be9aac024f908a11f24a580793868ca.jpg",
+    "genre": ["Animation", "Adventure", "Family"],
+    "rate": 8.6
+  },
+  {
+    "id": "4c3b5e2e-36b8-4e3d-b89d-35c8b8e9c9e4",
+    "title": "Parasite",
+    "year": 2019,
+    "director": "Bong Joon Ho",
+    "duration": 132,
+    "poster": "https://media.vogue.mx/photos/5e1c9b80c851470009c2fd92/2:3/w_2560%2Cc_limit/parasite-nominada-premio-oscar.jpg",
+    "genre": ["Comedy", "Drama", "Thriller"],
+    "rate": 8.6
+  }
+]

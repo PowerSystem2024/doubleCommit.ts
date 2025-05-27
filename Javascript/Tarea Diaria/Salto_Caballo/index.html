@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Salto del Caballo - Knight's Tour</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ventana">
+    <div class="titulo">♞ Salto del Caballo (Knight's Tour)</div>
+
+    <label>Tamaño del tablero (N x N, mínimo 5): </label>
+    <input type="number" id="nValor" value="8" min="5">
+    <button onclick="iniciar()">Iniciar Tour</button>
+
+    <div id="tablero" class="tablero"></div>
+    <div class="output" id="salida"></div>
+  </div>
+
+  <script src="caballo.js"></script>
+</body>
+</html>
