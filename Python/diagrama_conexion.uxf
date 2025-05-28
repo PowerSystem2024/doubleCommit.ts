@@ -1,0 +1,45 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLPackage</id><coordinates><x>100</x><y>30</y><w>680</w><h>650</h></coordinates><panel_attributes>acceso_datos
+--
+bg=gray
+fg=red</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>180</x><y>120</y><w>210</w><h>220</h></coordinates><panel_attributes>conexion
+--
+-DATABASE: String
+USERNAME: String
+DB_PORT: String
+HOST: String
+-conexion: connection
+-cursor: Cursor
+--
++obtenerConexion(cls): Connection
++obtenerCursor(cls): Cursor
++cerrar(cls)
+--
+Responsabilidades: 
+Administrar 
+la conexion a la base de datos
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>490</x><y>120</y><w>210</w><h>160</h></coordinates><panel_attributes>Persona
+--
+id: int
+nombre: String
+apellido: String
+email: String
+--
++__str__(): String
++metodo Get / Set de cada atributo
+--
+Responsabilidades:
+ Crear objetos de la calse persona</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>490</x><y>460</y><w>210</w><h>200</h></coordinates><panel_attributes>PersonaDao
+--
+-SELECCIONAR: String
+-INSERTAR: String
+-ACTUALIZAR: String
+-ELIMINAR: String
+--
++seleccionar(cls)
++insertar(cls Persona)
++actualizar(cls Persona)
++eliminar(cls Persona)
+--
+Responsabilidades:
+Realizar las operaciones sobre la base de datos
+de la entidad Persona</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>270</x><y>550</y><w>240</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>220;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>590</x><y>270</y><w>30</w><h>210</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;190;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>270</x><y>330</y><w>30</w><h>250</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;230;10;10</additional_attributes></element></diagram>

@@ -1,29 +1,24 @@
-
 # Esto es para conectar postgres
 import psycopg2 as bd
 from dsn import DSN
 
 conexion = bd.connect(**DSN)
 
-
 try:
-    conexion.autocommit = False #Esto directamente eno ddeberia estar, inicia la trasnsacción
+    # conexion.autocommit = False  # Desactivamos el autocommit , esto direcatamente no debería estar
     cursor = conexion.cursor()
-    sentencia = 'INSERT INTO persona(nombre, apellido, email ) VALUES (%s, %s, %s)'
-    valores = ('Sergio', 'Busquets', 'elmejor5delahistoria@gmail.com')
-    cursor.execute (sentencia,valores)
-
-    sentencia = "UPDATE persona SET nombre =%$, email=%$, WHERE id_persona=%$"
-    valores = ('Maluma', 'Beybe', 'elmaluma@gmail.com.ar', 1)
+    sentencia = "INSERT INTO persona (nombre, apellido, email) VALUES (%s, %s, %s)"
+    valores = ('Carlos', 'Perez', 'jsPerez@gmail.com')
     cursor.execute(sentencia, valores)
-
-
-    conexion.commit()#hacemos el commit manualmente, se cierra la transaccíon
-    print ('Termina la transacción')
-
-
-except Exception as e:
-    conexion.rollback()
+    
+    sentencia = 'UPDATE persona SET nombre=%s, apellido=%s, email=%s WHERE id_persona=%s'
+    valores = ('Juan', 'Juarez', 'jcjuarez@gmail.com', 1)
+    cursor.execute(sentencia, valores)
+    
+    conexion.commit()  # Confirmamos la transacción, hacemos el commit manualmente, se cierra la transacción
+    print("Termina la transacción")
+except bd.Error as e:
+    conexion.rollback() # Deshacemos la transacción
     print(f"Ocurrió un error, se hizo un rollback: {e}")
 finally:
     # Cerramos la conexión
