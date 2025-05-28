@@ -21,9 +21,6 @@
      <a href="https://github.com/Xeneixxe" title="Xeneixxe">
     <img src="https://avatars.githubusercontent.com/u/134340520?v=4" width="45" height="45" alt="Fran avatar" />
     </a>
-    <a href="https://github.com/Philama" title="Philama">
-    <img src="https://avatars.githubusercontent.com/u/25463245?v=4" width="45" height="45" alt="Guardi avatar" />
-    </a>
     <a href="https://github.com/solidsnk86/" title="solidsnk86">
     <img src="https://avatars.githubusercontent.com/u/93176365?v=4" width="45" height="45" alt="Gabriel avatar" />
     </a>
