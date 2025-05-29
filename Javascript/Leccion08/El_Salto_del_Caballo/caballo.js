@@ -8,6 +8,7 @@ const movimientosCaballo = [
   [2, 1], [1, 2], [-1, 2], [-2, 1],
   [-2, -1], [-1, -2], [1, -2], [2, -1]
 ];
+const reiniciar = document.getElementById("reiniciar")
 
 let N = 8;
 let tablero = [];
@@ -110,3 +111,7 @@ function iniciar() {
     if (!success) salida.textContent = '❌ No se encontró solución.';
   });
 }
+
+reiniciar.addEventListener("click", () => {
+  window.location.reload()
+})
