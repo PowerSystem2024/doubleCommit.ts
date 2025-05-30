@@ -20,8 +20,8 @@ let salida = null;
  * Esta función actualiza la representación visual del tablero en el navegador.
  * posX y posY: Coordenadas actuales del caballo.
  * Cada celda contiene -1 si no ha sido visitada.
- * @param {*} posX 
- * @param {*} posY 
+ * @param {*} posX posición en el eje X
+ * @param {*} posY posición en el eje Y
  */
 function dibujarTablero(posX = -1, posY = -1) {
   tableroHTML.innerHTML = ''; // Limpia el tablero antes de empezar
@@ -63,7 +63,7 @@ function esValido(x, y) {
 async function resolver(x, y, paso) {
   tablero[x][y] = paso; // Marca la celda actual como visitada
   dibujarTablero(x, y); // Actualiza el tablero visualmente
-  await new Promise(r => setTimeout(r, delay));
+  await new Promise(resolve => setTimeout(resolve, delay));
 
   if (paso === N * N - 1) { // Si el número de pasos es igual al total de celdas `N * N -1` el recorrido está completo
     salida.textContent = '✅ ¡Tour completado con éxito!';
@@ -115,3 +115,4 @@ function iniciar() {
 reiniciar.addEventListener("click", () => {
   window.location.reload()
 })
+
