@@ -1,0 +1,47 @@
+02:05:30 AM:DEBUG [Persona.py:45] 
+            Id Persona: 1,
+            Nombre: Mario,
+            Apellido: Meza,
+            Email: mario.meza@gmail.com
+        
+02:07:50 AM:DEBUG [logger_base.py:13] log a nivel debug
+02:07:50 AM:INFO [logger_base.py:14] log a nivel info
+02:07:50 AM:WARNING [logger_base.py:15] log a nivel warning
+02:07:50 AM:ERROR [logger_base.py:16] log a nivel error
+02:07:50 AM:CRITICAL [logger_base.py:17] log a nivel critical
+02:10:14 AM:DEBUG [Persona.py:45] 
+            Id Persona: 1,
+            Nombre: Mario,
+            Apellido: Meza,
+            Email: mario.meza@gmail.com
+        
+02:11:02 AM:DEBUG [Persona.py:45] 
+            Id Persona: 1,
+            Nombre: Mario,
+            Apellido: Meza,
+            Email: mario.meza@gmail.com
+        
+02:11:02 AM:DEBUG [Persona.py:47] 
+            Id Persona: 2,
+            Nombre: Pepe,
+            Apellido: Mujica,
+            Email: None
+        
+02:12:40 AM:DEBUG [Persona.py:45] 
+            Id Persona: 1,
+            Nombre: Mario,
+            Apellido: Meza,
+            Email: mario.meza@gmail.com
+        
+02:12:40 AM:DEBUG [Persona.py:47] 
+            Id Persona: 2,
+            Nombre: Pepe,
+            Apellido: Mujica,
+            Email: None
+        
+02:12:40 AM:DEBUG [Persona.py:49] 
+            Id Persona: 1,
+            Nombre: None,
+            Apellido: None,
+            Email: None
+        
