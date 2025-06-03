@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Piedra, Papel o Tijera - Windows 98</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <script type="module" src="main.js"></script>
+    <link rel="shortcut icon" href="https://win98icons.alexmeub.com/icons/png/windows-0.png" type="image/x-icon">
+  </head>
+  <body>
+    <!-- Ícono del escritorio -->
+    <div class="desktop-icon" id="btnApp">
+      <div><div style="font-size: 20px; line-height: 32px">✂️</div></div>
+      <p style="padding-top: 4px">Piedra, Papel o Tijera</p>
+    </div>
+    
+    <div class="internet-explorer" id="ie">
+      <img
+        src="https://win98icons.alexmeub.com/icons/png/msie1-2.png"
+        width="45"
+        height="45"
+        alt=""
+      />
+      <p style="padding-top: 4px">Internet Explorer</p>
+    </div>
+
+    <div class="papelera">
+      <img
+        src="https://win98icons.alexmeub.com/icons/png/recycle_bin_empty-2.png"
+        width="45"
+        height="45"
+        alt=""
+      />
+      <p style="padding-top: 4px">Papelera de reciclaje</p>
+    </div>
+
+    <div class="window" id="ventana">
+      <div class="title-bar">
+        <div class="title-bar-text">🕹️ Piedra, Papel o Tijera</div>
+        <div class="title-bar-controls">
+          <button>_</button>
+          <button>□</button>
+          <button id="btnX">X</button>
+        </div>
+      </div>
+      <div class="window-body">
+        <h1>✊ Piedra, ✋ Papel o ✌️ Tijera</h1>
+        <div class="opciones">
+          <h1 style="font-size: 14px">HACÉ TU ELECCIÓN, ELEGÍ CON SABIDURÍA</h1>
+          <button class="boton" id="btn1">✊<br />PIEDRA</button>
+          <button class="boton" id="btn2">✋<br />PAPEL</button>
+          <button class="boton" id="btn3">✌️<br />TIJERA</button>
+        </div>
+        <div id="resultado">Haga clic en un botón para jugar...</div>
+        <div id="puntos">
+          👤 Jugador: <span id="pJugador">0</span><br />
+          💻 PC: <span id="pPC">0</span>
+        </div>
+        <button id="reiniciar">🔁 Jugar otra ronda</button>
+        <button id="reiniciarTodo">🧼 Reiniciar todo</button>
+      </div>
+    </div>
+
+    <footer>
+      <div class="inicio-popup" id="menu-inicio">
+        <div class="inicio-lateral">Windows 98</div>
+        <ul class="inicio-menu">
+          <li><img src="https://win98icons.alexmeub.com/icons/png/windows_update_large-5.png" /> Windows Update</li>
+          <li><img src="https://win98icons.alexmeub.com/icons/png/appwizard-2.png" /> Programs ▸</li>
+          <li><img src="https://win98icons.alexmeub.com/icons/png/directory_favorites-0.png" /> Favorites ▸</li>
+          <li><img src="https://win98icons.alexmeub.com/icons/png/directory_open_file_mydocs-0.png" /> Documents ▸</li>
+          <li><img src="https://win98icons.alexmeub.com/icons/png/settings_gear-2.png" /> Settings ▸</li>
+          <li><img src="https://win98icons.alexmeub.com/icons/png/search_file-1.png" /> Find ▸</li>
+          <li><img src="https://win98icons.alexmeub.com/icons/png/help_book_cool-0.png" /> Help</li>
+          <li><img src="https://win98icons.alexmeub.com/icons/png/application_hourglass_small-4.png" /> Run...</li>
+          <li><img src="https://win98icons.alexmeub.com/icons/png/key_win-4.png" /> Log Off SolidSnk86...</li>
+          <li><img src="https://win98icons.alexmeub.com/icons/png/shut_down_normal-2.png"  /> Shut Down...</li>
+        </ul>
+      </div>
+      
+      <button title="Inicio" id="inicio">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Windows_Logo_%281992-2001%29.svg"
+          width="30"
+          height="30"
+          style="rotate: -16deg"
+          alt="Logo Windows 98"
+        />
+        Incio
+      </button>
+      <aside>
+        <img
+          src="https://win98icons.alexmeub.com/icons/png/sched_tasks.png"
+          width="24"
+          height="24"
+          alt=""
+        />
+        <img
+          title="Volumen"
+          src="https://win98icons.alexmeub.com/icons/png/loudspeaker_rays-0.png"
+          width="24"
+          height="24"
+        />
+
+        <span id="reloj">12:00:00 PM</span>
+      </aside>
+    </footer>
+    <script type="module" src=""></script>
+  </body>
+</html>

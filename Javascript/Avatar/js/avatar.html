@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>LA LEYENDA DE AANG: DOUBLE COMMIT 🌍🌬️🌊🔥</title>
+    <link rel="stylesheet" href="/Javascript/Avatar/css/styles.css">
+  </head>
+  <body>
+    <h1>Avatar</h1>
+    <!-- Esto es estatico, No cambia el h1 se utiliza una sola vez  -->
+
+    <section id="seleccionar-personaje">
+      <h2>Elige tu personaje</h2>
+      <label for="zuko">
+        Zuko🔥
+        <img
+        width="40"
+        height="40"
+        id="Zuko🔥"
+        src="/Javascript/Avatar/public/avatar-zuko.webp"
+        alt=""
+        />
+        <input type="radio" name="personaje" id="zuko">
+      </label>
+      
+      <!-- Esta etiquetas es para darle un indicador a los usuarios de su selección -->
+      <label for="katara">
+        Katara💧
+        <img
+        width="40"
+        height="40"
+        id="Katara💧"
+        src="/Javascript/Avatar/public/images.jpg"
+        alt=""
+        />
+        <input type="radio" name="personaje" id="katara">
+      </label>
+
+      <label for="aang">
+        Aang 🌬️
+        <img
+        width="40"
+        height="40"
+        id="Aang 🌬️"
+        src="/Javascript/Avatar/public/images (1).jpg"
+        alt=""
+        />
+        <input type="radio" name="personaje" id="aang">
+      </label>
+
+
+      <label for="toph">
+        Toph 🌍
+        <img
+        width="40"
+        height="40"
+        id="Toph 🌍"
+        src="/Javascript/Avatar/public/Toph_Beifong.webp"
+        alt=""
+        />
+        <input type="radio" name="personaje" id="toph">
+      </label>
+
+      <!-- El botón de seleccionar el personaje  -->
+      <div style="margin-top: 20px;">
+        <button id="boton-personaje">Seleccionar</button>
+      </div>
+        <style>
+      /* Estilos para los botones de selección de personaje */
+      #seleccionar-personaje label {
+        display: inline-block;
+        margin: 10px;
+        padding: 10px 16px;
+        border: 2px solid #ccc;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: border-color 0.2s, box-shadow 0.2s;
+        background: #f9f9f9;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+        font-weight: bold;
+        text-align: center;
+        min-width: 110px;
+      }
+      #seleccionar-personaje label:hover,
+      #seleccionar-personaje input[type="radio"]:checked + label {
+        border-color: #0078d7;
+        box-shadow: 0 4px 12px rgba(0,120,215,0.10);
+        background: #e6f0fa;
+      }
+      /* Colores personalizados por personaje */
+      #seleccionar-personaje label[for="zuko"] {
+        border-color: #e25822;
+        background: #fff5f0;
+      }
+      #seleccionar-personaje label[for="zuko"]:hover,
+      #seleccionar-personaje input#zuko:checked + label {
+        border-color: #e25822;
+        background: #ffe5d5;
+      }
+      #seleccionar-personaje label[for="katara"] {
+        border-color: #3498db;
+        background: #f0f8ff;
+      }
+      #seleccionar-personaje label[for="katara"]:hover,
+      #seleccionar-personaje input#katara:checked + label {
+        border-color: #3498db;
+        background: #d6ecfa;
+      }
+      #seleccionar-personaje label[for="aang"] {
+        border-color: #7ed6df;
+        background: #f0fcff;
+      }
+      #seleccionar-personaje label[for="aang"]:hover,
+      #seleccionar-personaje input#aang:checked + label {
+        border-color: #7ed6df;
+        background: #e0f7fa;
+      }
+      #seleccionar-personaje label[for="toph"] {
+        border-color: #27ae60;
+        background: #f3fff0;
+      }
+      #seleccionar-personaje label[for="toph"]:hover,
+      #seleccionar-personaje input#toph:checked + label {
+        border-color: #27ae60;
+        background: #e0ffe5;
+      }
+      #seleccionar-personaje input[type="radio"] {
+        display: none;
+      }
+      #seleccionar-personaje img {
+        display: block;
+        margin: 6px auto 0 auto;
+        border-radius: 50%;
+        border: 1.5px solid #ccc;
+        background: #fff;
+      }
+        </style>
+        <section id="personajes-vs-enemigo" style="display: none">
+        <h2>¡Duelo!</h2>
+        <div id="duelo">
+          <div id="tarjeta-jugador" class="tarjeta">
+        <p id="vs-nombre-jugador"></p>
+        <img id="vs-img-jugador" src="" alt="" width="80" />
+          </div>
+          <h2>VS</h2>
+          <div id="tarjeta-enemigo" class="tarjeta">
+        <p id="vs-nombre-enemigo"></p>
+        <img id="vs-img-enemigo" src="" alt="" width="80" />
+          </div>
+        </div>
+
+      <!-- Se puede utilizar varias veces -->
+      <p><span id="nombre-jugador"> Tu personaje <span id="nro-vidas"> 3</span> vidas</p>
+      <!-- Pero esto debe ser dinamico para que cambien el numero de las vidas -->
+      <p><span id="nombre-enemigo"> El personaje del enemigo tienen <span id="nro-vidas"> 3</span> vidas</p>
+    </section>
+    
+    <section id="seleccionar-ataque">
+      <h2>Elige tu ataque</h2>
+      
+      <p>
+        <button id="boton-fuego">Fuego🔥</button>
+        <button id="boton-agua">Agua🌊</button>
+        <button id="boton-tierra">Tierra 🌍</button>
+        <button id="boton-aire">Aire 🌬️</button>
+      </p>
+    </section>
+
+    <section id="mensajes">
+      <p>
+        Tu personaje atacó con todo el poder del FUEGO, el personaje del enemigo
+        atacó con el medio poder de la Tierra -GANASTE
+      </p>
+    </section>
+
+    <section id="reiniciar">
+      <button id="reiniciar">Reiniciar</button>
+    </section>
+    <script src="/Javascript/Avatar/js/avatar.js" type="module"></script>
+  </body>
+</html>

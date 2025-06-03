@@ -1,4 +1,4 @@
-export const chistesMalos =
+export const urlChistesMalos =
   'https://cdn.jsdelivr.net/gh/liquidsnk86/chistes-malos@main/chistes-malos.json'
 
 export const VARIABLES_PLANTILLA = {

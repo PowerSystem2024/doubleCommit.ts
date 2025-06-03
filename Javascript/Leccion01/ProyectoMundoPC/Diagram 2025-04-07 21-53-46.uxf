@@ -1,0 +1,64 @@
+<diagram program="umletino" version="15.1"><zoom_level>9</zoom_level><element><id>UMLClass</id><coordinates><x>567</x><y>63</y><w>243</w><h>171</h></coordinates><panel_attributes>&lt;&lt;Orden&gt;&gt;
+--
+-idOrden: number
+-computadoras: Computadora[]
+contadorOrdenes: number
+--
+agregarComputadora(computadora)
+mostrarOrden()
+--
+Responsibilities
+-- Crear objetos de tipo Orden y 
+almacenar un arreglo de objetos 
+de tipo computadora</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>567</x><y>252</y><w>243</w><h>171</h></coordinates><panel_attributes>DispositivoEntrada
+--
+tipoEntrada: string
+marca: string
+--
+(agrega los métodos get/set de cada atributo)
+--
+Responsabilidades:
+--Crear objetos de tipo DispositivoEntrada</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>675</x><y>504</y><w>189</w><h>108</h></coordinates><panel_attributes>Teclado
+--
+idTeclado: number
+_contadorTeclado: number_
+--
+toString()
+--
+Responsabilidades:
+--Crear objetos de tipo Teclado</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>450</x><y>504</y><w>189</w><h>108</h></coordinates><panel_attributes>Raton
+--
+idRaton: number
+_contadorRatones: number_
+--
+toString()
+--
+Responsabilidades:
+-- Crear objetos de tipo Raton</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>90</x><y>63</y><w>225</w><h>189</h></coordinates><panel_attributes>&lt;&lt;Computadora&gt;&gt;
+--
+idComputadora: Number
+nombre: String
+monitor: Monitor
+teclado: Teclado
+raton: Raton
+contadorComputadoras: number
+--
+(agregar los métodos get/set de cada atributo)
+toString(): string
+--
+Responsabilidades
+-Crear objetos de tipo Monitor</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>306</x><y>144</y><w>279</w><h>27</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;.</panel_attributes><additional_attributes>290;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>162</x><y>243</y><w>27</w><h>243</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;250</additional_attributes></element><element><id>UMLClass</id><coordinates><x>81</x><y>468</y><w>243</w><h>198</h></coordinates><panel_attributes>&lt;&lt;Orden&gt;&gt;
+--
+-idOrden: number
+-computadoras: Computadora[]
+contadorOrdenes: number
+--
+agregarComputadora(computadora)
+mostrarOrden()
+--
+Responsibilities
+-- Crear objetos de tipo Orden y 
+almacenar un arreglo de objetos 
+de tipo computadora</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>162</x><y>324</y><w>216</w><h>36</h></coordinates><panel_attributes>lt=-
+&lt;&lt;agregar&gt;&gt;</panel_attributes><additional_attributes>10;20;220;20</additional_attributes></element><element><id>Relation</id><coordinates><x>351</x><y>333</y><w>27</w><h>324</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;340;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>351</x><y>630</y><w>423</w><h>27</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;10;450;10</additional_attributes></element><element><id>Relation</id><coordinates><x>747</x><y>603</y><w>27</w><h>54</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;40;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>585</x><y>603</y><w>27</w><h>54</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;40;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>747</x><y>441</y><w>27</w><h>81</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;70;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>639</x><y>414</y><w>153</w><h>27</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>150;10;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>9</x><y>0</y><w>135</w><h>27</h></coordinates><panel_attributes>MundoPc</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>9</x><y>27</y><w>882</w><h>675</h></coordinates><panel_attributes>
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>585</x><y>441</y><w>27</w><h>81</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;70;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>585</x><y>441</y><w>189</w><h>27</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;10;190;10</additional_attributes></element><element><id>Relation</id><coordinates><x>666</x><y>414</y><w>27</w><h>54</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;40</additional_attributes></element></diagram>

@@ -1,3 +1,7 @@
+<div align="left">
+<img src="https://neo-wifi.vercel.app/api/badge-counter?user=doubleCommit.ts&badge_gradient_2=1E68DB&badge_gradient_1=1E68DB&counter_color=010409" alt="Contador de Visitas doubleCommit.ts" />
+</div>
+
 <div align="center">
     <img src="./public/double-commit-logo.png" width="400" height="auto" />
 </div>
@@ -8,7 +12,7 @@
  <p>Este repositorio pertenece al grupo Double-Commit cohorte 2024 de la UTN facultad regional San Rafael Mendoza.</p>
 </div>
 
-Integrantes:
+### Integrantes:
 
 <div align="left" style="display: grid; grid-template-columns: repeat(auto-fill, minamax(45px, 1fr));">
     <a href="https://github.com/CeciliaOlejar" title="CeciliaOlejar">
@@ -16,9 +20,6 @@ Integrantes:
     </a>
      <a href="https://github.com/Xeneixxe" title="Xeneixxe">
     <img src="https://avatars.githubusercontent.com/u/134340520?v=4" width="45" height="45" alt="Fran avatar" />
-    </a>
-    <a href="https://github.com/Philama" title="Philama">
-    <img src="https://avatars.githubusercontent.com/u/25463245?v=4" width="45" height="45" alt="Guardi avatar" />
     </a>
     <a href="https://github.com/solidsnk86/" title="solidsnk86">
     <img src="https://avatars.githubusercontent.com/u/93176365?v=4" width="45" height="45" alt="Gabriel avatar" />
@@ -35,7 +36,7 @@ Integrantes:
 
 <h3>Algunos chistes nivel “te odio pero me río igual” 😥</h3>
 
-> _"Estás tan fuera de contexto como una variable global en una función recursiva."_
+> *"¿Qué hace un while en una relación? Se queda hasta que la condición cambie."*
 >
 > — Chistes Malos
 
