@@ -26,21 +26,9 @@
     </a>
 <div>
 
-### 🚍 Sección de actualizaciones automáticas
+### Prácticas con JavaScript
 
-- Esta sección se actualiza de manera automática cada dos horas con `github actions` mediante `node.js`
-
-<br>
-
-<div align="center">
-
-<h3>Algunos chistes nivel “te odio pero me río igual” 😥</h3>
-
-> *"¿Qué hace un while en una relación? Se queda hasta que la condición cambie."*
->
-> — Chistes Malos
-
-</div>
+Aquí pueden ver las demos de las diferentes prácticas de JavaScript: <a href="https://powersystem2024.github.io/doubleCommit.ts/">ver aquí!</a>
 
 #
 

@@ -99,9 +99,12 @@
   <button onclick="resolverHanoi()">🚀 Resolver</button>
 
   <h2>📋 Pasos</h2>
-  <div id="salida"></div>
+  <div id="salida">Esperando los pasos...</div>
 
   <script>
+    /*
+    * @
+    */
     function hanoi(n, origen, destino, auxiliar, salida) {
       if (n === 1) {
         salida.push(`🟢 Mover disco 1 de ${origen} a ${destino}`);
