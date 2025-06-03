@@ -167,7 +167,10 @@ h1 {
 
 .desktop-icon:hover,
 .internet-explorer:hover,
-.papelera:hover {
+.papelera:hover,
+.torre-hanoi:hover,
+.salto-caballo:hover,
+.n-reinas:hover {
   background: #000080cb;
   border: 1px dashed #808080;
 }
@@ -193,9 +196,33 @@ h1 {
   top: 25%;
 }
 
+.torre-hanoi {
+  border: 1px solid transparent;
+  position: absolute;
+  left: 14px;
+  top: 40%;
+}
+
+.salto-caballo {
+  border: 1px solid transparent;
+  position: absolute;
+  right: 14px;
+  top: 60%;
+}
+
+.n-reinas {
+  border: 1px solid transparent;
+  position: absolute;
+  right: 14px;
+  top: 40%;
+}
+
 .desktop-icon p,
 .internet-explorer p,
-.papelera p {
+.papelera p,
+.torre-hanoi p,
+.salto-caballo p,
+.n-reinas p {
   font-size: 11px;
   margin: 0;
   color: white;

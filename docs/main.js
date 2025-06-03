@@ -1,4 +1,5 @@
 import { abrirDialogo } from "./utils/dialog.mjs";
+import { cerrarElemento, mostrarElemento } from "./utils/elemento.mjs";
 import { escucharMovimientoMouse } from "./utils/mouse.mjs";
 
 // En cuanto cargue el DOM se ejecuta todo
@@ -26,19 +27,7 @@ onload = () => {
 
   let puntosJugador = 0;
   let puntosPC = 0;
-
-  /** Abre ventana de la aplicación
-   * @returns {void}
-   */
-  const abrirVentana = () => {
-    ventana.style.display = "block";
-  };
-  /** Cierra la ventana de la aplicación
-   * @returns {void}
-   */
-  const cerrarVentana = () => {
-    ventana.style.display = "none";
-  };
+  
   /**
    * Método para arrastrar ventanas en el DOM según su posición en el eje { x, y }
    * @param {Element} ventana
@@ -244,10 +233,10 @@ onload = () => {
 
   const manejarEventosBotones = () => {
     opcionBoton.iconoAplicacion.addEventListener("dblclick", () => {
-      abrirVentana();
+      mostrarElemento(ventana);
     });
     botonCerrarVentana.onclick = () => {
-      cerrarVentana();
+      cerrarElemento(ventana);
     };
     opcionBoton.piedra.onclick = () => {
       jugar(1);
