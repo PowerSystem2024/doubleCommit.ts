@@ -6,7 +6,7 @@
 export const escucharMovimientoMouse = (cuandoMueva) => {
   const actualizarEje = (event) => {
     const eje = { x: event.clientX, y: event.clientY };
-    cuandoMueva(eje);
+    cuandoMueva(eje); // <- callback
   };
 
   window.addEventListener("mousemove", actualizarEje);
