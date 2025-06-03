@@ -48,3 +48,41 @@
 12:17:07 PM:DEBUG [Conexion.py:26] Conexiï¿½n exitosa: <connection object at 0x0000023AFF1E4F20; dsn: 'user=postgres password=xxx dbname=test_bd host=127.0.0.1 port=5432', closed: 0>
 12:23:03 PM:DEBUG [Conexion.py:26] Conexión exitosa: <connection object at 0x0000024E9DB84F20; dsn: 'user=postgres password=xxx dbname=test_bd host=127.0.0.1 port=5432', closed: 0>
 12:23:03 PM:DEBUG [Conexion.py:39] Se abrió correctamente el cursor: <cursor object at 0x0000024E9D7F3140; closed: 0>
+12:43:47 PM:ERROR [Conexion.py:29] Ocurrió un error: connection to server at "127.0.0.1", port 5432 failed: FATAL:  password authentication failed for user "postgres"
+
+12:44:54 PM:DEBUG [Conexion.py:26] Conexión exitosa: <connection object at 0x000002A8C8F85E00; dsn: 'user=postgres password=xxx dbname=test_bd host=127.0.0.1 port=5432', closed: 0>
+12:44:54 PM:DEBUG [Conexion.py:39] Se abrió correctamente el cursor: <cursor object at 0x000002A8CACCF220; closed: 0>
+12:45:17 PM:DEBUG [Conexion.py:26] Conexión exitosa: <connection object at 0x000002194BD35E00; dsn: 'user=postgres password=xxx dbname=test_bd host=127.0.0.1 port=5432', closed: 0>
+12:45:17 PM:DEBUG [Conexion.py:39] Se abrió correctamente el cursor: <cursor object at 0x000002194DA3F220; closed: 0>
+12:51:19 PM:DEBUG [Conexion.py:26] Conexión exitosa: <connection object at 0x0000019F9D0E5E00; dsn: 'user=postgres password=xxx dbname=test_bd host=127.0.0.1 port=5432', closed: 0>
+12:51:19 PM:DEBUG [Conexion.py:39] Se abrió correctamente el cursor: <cursor object at 0x0000019F9EE4F220; closed: 0>
+12:51:19 PM:DEBUG [Persona_DAO.py:36] 
+            Id Persona: 18,
+            Nombre: Juan Carlos,
+            Apellido: Meza,
+            Email: jc_meza@gmail.com
+        
+12:51:19 PM:DEBUG [Persona_DAO.py:36] 
+            Id Persona: 26,
+            Nombre: Maria,
+            Apellido: Esparza,
+            Email: mesparza@gmail.com
+        
+12:51:19 PM:DEBUG [Persona_DAO.py:36] 
+            Id Persona: 28,
+            Nombre: Carlos,
+            Apellido: Lara,
+            Email: clara@gmail.com
+        
+12:51:19 PM:DEBUG [Persona_DAO.py:36] 
+            Id Persona: 29,
+            Nombre: Carlos,
+            Apellido: Perez,
+            Email: jsPerez@gmail.com
+        
+12:51:19 PM:DEBUG [Persona_DAO.py:36] 
+            Id Persona: 31,
+            Nombre: Gato,
+            Apellido: Felix,
+            Email: elgato_felix@yahoo.com
+        
