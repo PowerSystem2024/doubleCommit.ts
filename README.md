@@ -28,7 +28,9 @@
 
 ### Prácticas con JavaScript
 
-Aquí pueden ver las demos de las diferentes prácticas de JavaScript: <a href="https://powersystem2024.github.io/doubleCommit.ts/">ver aquí!</a>
+Aquí pueden ver las demos de las diferentes prácticas de JavaScript: <a href="https://powersystem2024.github.io/doubleCommit.ts/">ver demo!</a>
+
+<img src="public/win98-desktop.png" width="100%" height="auto" alt="Screenshot" />
 
 #
 
