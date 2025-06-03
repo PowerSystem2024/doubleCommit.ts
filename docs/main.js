@@ -41,7 +41,7 @@ onload = () => {
   };
   /**
    * Método para arrastrar ventanas en el DOM según su posición en el eje { x, y }
-   * @param {Element} ventana 
+   * @param {Element} ventana
    * @returns {MouseEvent}
    */
   const arrastrarVentana = (ventana) => {
@@ -161,7 +161,7 @@ onload = () => {
   }
 
   // Actividad botón inicio
-  const manejarBotonInicio = () => {
+  const manejarBotonInicio = () => {    
     if (!menuInicio.checkVisibility()) {
       menuInicio.style.display = "flex";
     } else {
@@ -171,11 +171,12 @@ onload = () => {
 
   const crearVentanaNavegador = () => {
     // Crear wrapper principal
-    
-    const inputURL = location.href.split("address=")
-    const direccionURL = inputURL[1]
-    const url = direccionURL ? decodeURIComponent(direccionURL) : "https://neo-wifi.vercel.app"
-    console.log(url)
+    const inputURL = location.href.split("address=");
+    const direccionURL = inputURL[1];
+    const url = direccionURL
+      ? decodeURIComponent(direccionURL)
+      : "https://neo-wifi.vercel.app";
+   
     const wrapper = document.createElement("div");
     wrapper.className = "navegador-wrapper";
     wrapper.id = "navegador-wrapper";
@@ -232,7 +233,7 @@ onload = () => {
     wrapper.appendChild(mneuNav);
     wrapper.appendChild(iframe);
     document.body.appendChild(wrapper);
-    arrastrarVentana(wrapper)
+    arrastrarVentana(wrapper);
 
     // Cerrar al hacer click en el botón
     barra.querySelector("#cerrarBtn").textContent = "X";
@@ -271,11 +272,13 @@ onload = () => {
     };
   };
 
-  const worker = new Worker(new URL("./worker/clock-worker.js", import.meta.url))
-  worker.postMessage(1000)
+  const worker = new Worker(
+    new URL("./worker/clock-worker.js", import.meta.url)
+  );
+  worker.postMessage(1000);
   worker.onmessage = (event) => {
-    reloj.textContent = event.data
-  }
+    reloj.textContent = event.data;
+  };
   arrastrarVentana(ventana);
   manejarEventosBotones();
 };
