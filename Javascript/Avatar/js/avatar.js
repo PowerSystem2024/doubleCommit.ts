@@ -67,7 +67,7 @@ onload = () => {
   let ataquejugador
 
   let botonPunio = document.getElementById("boton-punio");
-  botonpunio.addEventListener("click", ataquepunio);
+  botonPunio.addEventListener("click", ataquepunio);
   let botonPatada = document.getElementById("boton-patada");
   botonPatada.addEventListener("click", ataquePatada);
   let botonBarrida = document.getElementById("boton-barrida");
