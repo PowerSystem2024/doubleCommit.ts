@@ -41,14 +41,14 @@ onload = () => {
 
     // Elegir personaje enemigo aleatorio
     const personajeEnemigo = personajes[Math.floor(Math.random() * personajes.length)];
-  
+
     // Asegurarse de que el enemigo no sea el mismo que el jugador
     while (personajeEnemigo === personajeSeleccionado) {
       personajeEnemigo = personajes[Math.floor(Math.random() * personajes.length)];
     }
 
     // Mostrar personaje jugador y enemigo 
-    document.getElementById("nombre-jugador").innerText = "Tu personaje es "+personajeSeleccionado +" tiene 3 vidas";
+    document.getElementById("nombre-jugador").innerText = "Tu personaje es " + personajeSeleccionado + " tiene 3 vidas";
     document.getElementById("nombre-enemigo").innerText = "Tu enemigo es " + personajeEnemigo + " tiene 3 vidas";
 
     // Mostrar sección personaje-vs-enemigo
@@ -64,5 +64,28 @@ onload = () => {
 
   let botonPersonajeJugador = document.getElementById("boton-personaje");
   botonPersonajeJugador.addEventListener("click", seleccionarPersonajeJugador);
+  let ataquejugador
+
+  let botonPunio = document.getElementById("boton-punio");
+  botonpunio.addEventListener("click", ataquepunio);
+  let botonPatada = document.getElementById("boton-patada");
+  botonPatada.addEventListener("click", ataquePatada);
+  let botonBarrida = document.getElementById("boton-barrida");
+  botonBarrida.addEventListener("click", ataqueBarrida);
+
+
+  function ataquepunio() {
+    ataquejugador = "punio"
+    ataqueAleatorioEnemigo()
+  }
+
+  function ataquePatada() {
+    ataquejugador = "patada"
+    ataqueAleatorioEnemigo()
+  }
+  function ataqueBarrida() {
+    ataquejugador = "barrida"
+    ataqueAleatorioEnemigo()
+  }
 
 };
