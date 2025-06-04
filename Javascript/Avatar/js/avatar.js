@@ -64,5 +64,4 @@ onload = () => {
 
   let botonPersonajeJugador = document.getElementById("boton-personaje");
   botonPersonajeJugador.addEventListener("click", seleccionarPersonajeJugador);
-
 };
