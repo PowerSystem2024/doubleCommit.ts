@@ -12,7 +12,7 @@ onload = () => {
   const botonPunio = document.getElementById("boton-punio");
   const botonPatada = document.getElementById("boton-patada");
   const botonBarrida = document.getElementById("boton-barrida");
-  const personajes = ["Zuko🔥", "Katara💧", "Aang 🌬️", "Toph 🌍"];
+  const personajes = ["Zuko 🔥", "Katara 💧", "Aang 🌬️", "Toph 🌍"];
   let personajeEnemigo =
     personajes[Math.floor(Math.random() * personajes.length)];
   const aletarorio = (min, max) => {
@@ -26,17 +26,17 @@ onload = () => {
     const toph = document.getElementById("toph");
 
     const imagenes = {
-      "Zuko🔥": "/Javascript/Avatar/public/avatar-zuko.webp",
-      "Katara💧": "/Javascript/Avatar/public/images.jpg",
+      "Zuko 🔥": "/Javascript/Avatar/public/avatar-zuko.webp",
+      "Katara 💧": "/Javascript/Avatar/public/images.jpg",
       "Aang 🌬️": "/Javascript/Avatar/public/images (1).jpg",
       "Toph 🌍": "/Javascript/Avatar/public/Toph_Beifong.webp",
     };
 
     if (zuko.checked) {
-      personajeSeleccionado = "Zuko🔥";
+      personajeSeleccionado = "Zuko 🔥";
       // mostrarPersonaje("Zuko🔥");
     } else if (katara.checked) {
-      personajeSeleccionado = "Katara💧";
+      personajeSeleccionado = "Katara 💧";
       // mostrarPersonaje("Katara💧");
     } else if (aang.checked) {
       personajeSeleccionado = "Aang 🌬️";
@@ -51,7 +51,8 @@ onload = () => {
 
     // Asegurarse de que el enemigo no sea el mismo que el jugador
     if (personajeEnemigo === personajeSeleccionado) {
-      personajeEnemigo = personajes[Math.floor(Math.random() * personajes.length)];
+      personajeEnemigo =
+        personajes[Math.floor(Math.random() * personajes.length)];
     }
 
     // Mostrar sección personaje-vs-enemigo
@@ -76,7 +77,7 @@ onload = () => {
     } else {
       ataqueEnemigo = "Barrida 🦶";
     }
-    return ataqueAleatorio
+    return ataqueAleatorio;
   }
 
   function ataquePunio() {
@@ -95,38 +96,79 @@ onload = () => {
   }
 
   // Evento de click en los botones de combate
-  botonPunio.onclick = () => ataquePunio()
-  botonPatada.onclick = () => ataquePatada()
-  botonBarrida.onclick = () => ataqueBarrida()
+  botonPunio.onclick = () => ataquePunio();
+  botonPatada.onclick = () => ataquePatada();
+  botonBarrida.onclick = () => ataqueBarrida();
 
-  function combate(personajeEnemigo, personajeSeleccionado) {
+  /**
+   * Función para mostrar un dialogo
+   * @returns {void}
+   */
+  const crearDialogo = (contenido = "") => {
+    const dialogo = document.createElement("dialog");
+    document.body.appendChild(dialogo);
+    dialogo.innerHTML = `
+    <div>
+        <header>
+            <p>Resultado</p>
+            <span title="Cerrar diálogo">X</span>
+        </header>
+        <p style="padding: 24px">${contenido}</p>
+    </div>
+    `;
+    dialogo.showModal();
+    cerrarDialogo();
+  };
+
+  /**
+   * Cerrar dialogo y evitar re-renderizado, se puede cerrar haciendo click fuera.
+   */
+  const cerrarDialogo = () => {
+    const dialogo = document.querySelector("dialog");
+    const divDialogo = dialogo.querySelector("div");
+    const botonCerrar = dialogo.querySelector("span");
+
+    if (dialogo) {
+      dialogo.onclick = (event) => {
+        if (
+          (dialogo && !divDialogo?.contains(event.target)) ||
+          botonCerrar.contains(event.target)
+        ) {
+          dialogo.close();
+          document.body.removeChild(dialogo);
+        }
+      };
+    }
+  };
+  // Función de combate
+  function combate() {
     nombreJugador.textContent = personajeSeleccionado;
     nombreEnemigo.textContent = personajeEnemigo;
 
-    ataqueAleatorioEnemigo()
+    ataqueAleatorioEnemigo();
     if (vidasEnemigo > 0 && vidasJugador > 0) {
       if (ataqueEnemigo === ataqueJugador) {
-        alert("Empate");
-        nombreJugador.textContent = `Tú personaje ${personajeSeleccionado} tiene ${vidasJugador} vidas`;
-        nombreEnemigo.textContent = `Tú personaje ${personajeEnemigo} tiene ${vidasEnemigo} vidas`;
+        crearDialogo(`${personajeSeleccionado} a empatado ésta ronda con ${personajeEnemigo}`);
+        nombreJugador.textContent = `${personajeSeleccionado} tiene ${vidasJugador} vidas`;
+        nombreEnemigo.textContent = `${personajeEnemigo} tiene ${vidasEnemigo} vidas`;
       } else if (
         (ataqueJugador === "Puño 👊" && ataqueEnemigo === "Barrida 🦶") ||
         (ataqueJugador === "Barrida 🦶" && ataqueEnemigo === "Patada 🦵") ||
         (ataqueJugador === "Patada 🦵" && ataqueEnemigo === "Puño 👊")
       ) {
-        alert("¡Ganaste esta ronda!");
+        crearDialogo(`${personajeSeleccionado} gana la ronda!`);
         vidasEnemigo--;
-        nombreJugador.textContent = `Tú personaje ${personajeSeleccionado} tiene ${vidasJugador} vidas`;
-        nombreEnemigo.textContent = `El personaje ${personajeEnemigo} tiene ${vidasEnemigo} vidas`;
+        nombreJugador.textContent = `${personajeSeleccionado} tiene ${vidasJugador} vidas`;
+        nombreEnemigo.textContent = `${personajeEnemigo} tiene ${vidasEnemigo} vidas`;
       } else {
-        alert("¡Perdiste esta ronda!");
+        crearDialogo(`${personajeEnemigo} le ha ganado a ${personajeSeleccionado}. Pierdes una vida en ésta ronda!`);
         vidasJugador--;
-        nombreJugador.textContent = `Tú personaje ${personajeSeleccionado} tiene ${vidasJugador} vidas`;
-        nombreEnemigo.textContent = `El personaje ${personajeEnemigo} tiene ${vidasEnemigo} vidas`;
+        nombreJugador.textContent = `${personajeSeleccionado} tiene ${vidasJugador} vidas`;
+        nombreEnemigo.textContent = `${personajeEnemigo} tiene ${vidasEnemigo} vidas`;
       }
     } else {
-      alert("Terminó el juego")
-      window.location.reload()
+      alert("Terminó el juego");
+      window.location.reload();
     }
   }
 };

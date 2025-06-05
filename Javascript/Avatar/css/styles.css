@@ -155,3 +155,56 @@ section {
   border-radius: 12px;
   background-color: #e0ffe5;
 }
+
+dialog {
+  padding: 4px;
+  width: 280px;
+  border: none;
+  border: 2px solid;
+  border-color: #eee;
+  background-color: #fff;
+  border-radius: 12px;
+  filter: drop-shadow(0 0 10px #333);
+}
+
+dialog div header {
+  height: 24px;
+  padding-inline: 4px;
+  color: #dfdfdf;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  -webkit-app-region: drag;
+}
+
+dialog div p {
+  color: #0a0a0a;
+}
+
+dialog div header span {
+  width: 18px;
+  height: 18px;
+  border: 1px solid #eee;
+  margin-left: 2px;
+  font-size: 14px;
+  border-radius: 3px;
+  color: #0a0a0a;
+  cursor: default;
+  font-weight: 600;
+}
+
+dialog span:hover {
+  background-color: #ccc;
+  color: #d32f2f;
+}
+
+dialog::backdrop {
+  backdrop-filter: blur(4px);
+  cursor: alias;
+}
+
+@media (width <= 762px) {
+  dialog {
+    width: 100%;
+  }
+}
