@@ -1,7 +1,7 @@
-from logger_base import log
+# from logger_base import log
 
 class Persona:
-    def __init__(self, id_persona = None, nombre = None, apellido = None, email = None):
+    def __init__(self, id_persona=None, nombre=None, apellido=None, email=None):
         self._id_persona = id_persona
         self._nombre = nombre
         self._apellido = apellido
@@ -20,8 +20,8 @@ class Persona:
         return self._id_persona
     
     @id_persona.setter
-    def id_persona(self, nombre):
-        self._nombre = nombre
+    def id_persona(self, id_persona):
+        self._id_persona = id_persona
         
     @property
     def nombre(self):
@@ -30,20 +30,28 @@ class Persona:
     @nombre.setter
     def nombre(self, nombre):
         self._nombre = nombre
+        
+    @property
+    def apellido(self):
+        return self._apellido
+    
+    @apellido.setter
+    def apellido(self, apellido):
+        self._apellido = apellido
     
     @property
     def email(self):
         return self._email
     
-    email.setter
+    @email.setter
     def email(self, email):
         self._email = email
         
 
-if __name__ == "__main__":
-    persona1 = Persona(1, "Mario", "Meza", "mario.meza@gmail.com")
-    log.debug(persona1)
-    persona2 = Persona(2, "Pepe", "Mujica")
-    log.debug(persona2)
-    persona1 = Persona(id_persona=1)
-    log.debug(persona1)
+# if __name__ == "__main__":
+#     persona1 = Persona(1, "Mario", "Meza", "mario.meza@gmail.com")
+#     log.debug(persona1)
+#     persona2 = Persona(2, "Pepe", "Mujica")
+#     log.debug(persona2)
+#     persona1 = Persona(id_persona=1)
+#     log.debug(persona1)
