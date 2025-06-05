@@ -3,23 +3,18 @@ onload = () => {
   let ataqueEnemigo;
   let vidasJugador = 3;
   let vidasEnemigo = 3;
-  let botonPersonajeJugador = document.getElementById("boton-personaje");
+  let personajeSeleccionado = "";
+  const botonPersonajeJugador = document.getElementById("boton-personaje");
+
   botonPersonajeJugador.addEventListener("click", seleccionarPersonajeJugador);
   const nombreJugador = document.getElementById("nombre-jugador");
   const nombreEnemigo = document.getElementById("nombre-enemigo");
-  let personajeSeleccionado = "";
-  let botonPunio = document.getElementById("boton-punio");
-  botonPunio.addEventListener("click", ataquepunio);
-  let botonPatada = document.getElementById("boton-patada");
-  botonPatada.addEventListener("click", ataquePatada);
-  let botonBarrida = document.getElementById("boton-barrida");
-  botonBarrida.addEventListener("click", ataqueBarrida);
-  const vidasJugadorResultado = document.getElementById("nro-vidas-jugador");
-  const vidasEnemigoResultado = document.getElementById("nro-vidas-enemigo");
+  const botonPunio = document.getElementById("boton-punio");
+  const botonPatada = document.getElementById("boton-patada");
+  const botonBarrida = document.getElementById("boton-barrida");
   const personajes = ["Zuko🔥", "Katara💧", "Aang 🌬️", "Toph 🌍"];
   let personajeEnemigo =
     personajes[Math.floor(Math.random() * personajes.length)];
-
   const aletarorio = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   };
@@ -36,11 +31,6 @@ onload = () => {
       "Aang 🌬️": "/Javascript/Avatar/public/images (1).jpg",
       "Toph 🌍": "/Javascript/Avatar/public/Toph_Beifong.webp",
     };
-
-    // funcion para mostrar un alert con el personaje o enemigo elegido
-    function mostrarPersonaje(text = "") {
-      alert(text);
-    }
 
     if (zuko.checked) {
       personajeSeleccionado = "Zuko🔥";
@@ -60,9 +50,8 @@ onload = () => {
     }
 
     // Asegurarse de que el enemigo no sea el mismo que el jugador
-    while (personajeEnemigo === personajeSeleccionado) {
-      personajeEnemigo =
-        personajes[Math.floor(Math.random() * personajes.length)];
+    if (personajeEnemigo === personajeSeleccionado) {
+      personajeEnemigo = personajes[Math.floor(Math.random() * personajes.length)];
     }
 
     // Mostrar sección personaje-vs-enemigo
@@ -74,8 +63,8 @@ onload = () => {
     document.getElementById("vs-img-enemigo").src = imagenes[personajeEnemigo];
     document.getElementById("personajes-vs-enemigo").style.display = "block";
 
-    nombreJugador.textContent = `${personajeSeleccionado} tiene ${vidasJugador} vidas`;
-    nombreEnemigo.textContent = `${personajeEnemigo} tiene ${vidasEnemigo} vidas`;
+    nombreJugador.textContent = `Tú personaje ${personajeSeleccionado} tiene ${vidasJugador} vidas`;
+    nombreEnemigo.textContent = `El enemigo ${personajeEnemigo} tiene ${vidasEnemigo} vidas`;
   }
 
   function ataqueAleatorioEnemigo() {
@@ -90,7 +79,7 @@ onload = () => {
     return ataqueAleatorio
   }
 
-  function ataquepunio() {
+  function ataquePunio() {
     ataqueJugador = "Puño 👊";
     combate(personajeEnemigo, personajeSeleccionado);
   }
@@ -99,10 +88,16 @@ onload = () => {
     ataqueJugador = "Patada 🦵";
     combate(personajeEnemigo, personajeSeleccionado);
   }
+
   function ataqueBarrida() {
     ataqueJugador = "Barrida 🦶";
     combate(personajeEnemigo, personajeSeleccionado);
   }
+
+  // Evento de click en los botones de combate
+  botonPunio.onclick = () => ataquePunio()
+  botonPatada.onclick = () => ataquePatada()
+  botonBarrida.onclick = () => ataqueBarrida()
 
   function combate(personajeEnemigo, personajeSeleccionado) {
     nombreJugador.textContent = personajeSeleccionado;
@@ -112,8 +107,8 @@ onload = () => {
     if (vidasEnemigo > 0 && vidasJugador > 0) {
       if (ataqueEnemigo === ataqueJugador) {
         alert("Empate");
-        nombreJugador.textContent = `El personaje ${personajeSeleccionado} tiene ${vidasJugador} vidas`;
-        nombreEnemigo.textContent = `El personaje ${personajeEnemigo} tiene ${vidasEnemigo} vidas`;
+        nombreJugador.textContent = `Tú personaje ${personajeSeleccionado} tiene ${vidasJugador} vidas`;
+        nombreEnemigo.textContent = `Tú personaje ${personajeEnemigo} tiene ${vidasEnemigo} vidas`;
       } else if (
         (ataqueJugador === "Puño 👊" && ataqueEnemigo === "Barrida 🦶") ||
         (ataqueJugador === "Barrida 🦶" && ataqueEnemigo === "Patada 🦵") ||
@@ -121,12 +116,12 @@ onload = () => {
       ) {
         alert("¡Ganaste esta ronda!");
         vidasEnemigo--;
-        nombreJugador.textContent = `El personaje ${personajeSeleccionado} tiene ${vidasJugador} vidas`;
+        nombreJugador.textContent = `Tú personaje ${personajeSeleccionado} tiene ${vidasJugador} vidas`;
         nombreEnemigo.textContent = `El personaje ${personajeEnemigo} tiene ${vidasEnemigo} vidas`;
       } else {
         alert("¡Perdiste esta ronda!");
         vidasJugador--;
-        nombreJugador.textContent = `El personaje ${personajeSeleccionado} tiene ${vidasJugador} vidas`;
+        nombreJugador.textContent = `Tú personaje ${personajeSeleccionado} tiene ${vidasJugador} vidas`;
         nombreEnemigo.textContent = `El personaje ${personajeEnemigo} tiene ${vidasEnemigo} vidas`;
       }
     } else {
