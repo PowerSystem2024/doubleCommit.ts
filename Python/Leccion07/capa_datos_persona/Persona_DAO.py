@@ -84,12 +84,12 @@ if __name__ == "__main__":
     # actualizacion_persona1 = Persona_DAO.actualizar(persona1_actualizada)
     # log.debug(f"Se ha actualizado: {actualizacion_persona1} registro.")
 
-    # Seleccionar un objeto
-    personas = Persona_DAO.seleccionar()
-    for persona in personas:
-        log.debug(persona)
-
     # Eliminar un registro
     # persona1 = Persona(id_persona=9)
     # persona_eliminada = Persona_DAO.eliminar(persona1)
     # log.debug(f'Se ha eliminado {persona_eliminada}')
+    
+    # Seleccionar un objeto
+    personas = Persona_DAO.seleccionar()
+    for persona in personas:
+        log.debug(persona)

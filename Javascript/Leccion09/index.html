@@ -102,23 +102,20 @@
   <div id="salida">Esperando los pasos...</div>
 
   <script>
-    /*
-    * @
-    */
-    function hanoi(n, origen, destino, auxiliar, salida) {
-      if (n === 1) {
+    function hanoi(disco, origen, destino, auxiliar, salida) {
+      if (disco === 1) {
         salida.push(`🟢 Mover disco 1 de ${origen} a ${destino}`);
         return;
       }
-      hanoi(n - 1, origen, auxiliar, destino, salida);
+      hanoi(disco - 1, origen, auxiliar, destino, salida);
       salida.push(`🟢 Mover disco ${n} de ${origen} a ${destino}`);
-      hanoi(n - 1, auxiliar, destino, origen, salida);
+      hanoi(disco - 1, auxiliar, destino, origen, salida);
     }
 
     function resolverHanoi() {
-      const n = parseInt(document.getElementById("discos").value);
+      const discos = parseInt(document.getElementById("discos").value);
       const pasos = [];
-      hanoi(n, "A", "C", "B", pasos);
+      hanoi(discos, "A", "C", "B", pasos);
       document.getElementById("salida").textContent = pasos.join("\n");
     }
   </script>
