@@ -151,3 +151,10 @@ section {
   border: 1.5px solid #ccc;
   background: #fff;
 }
+
+.resultado-combate {
+  margin: 16px;
+  padding: 16px;
+  border: 1px solid #333;
+  border-radius: 12px;
+}
