@@ -5,13 +5,12 @@ onload = () => {
   let vidasEnemigo = 3;
   let personajeSeleccionado = "";
   const botonPersonajeJugador = document.getElementById("boton-personaje");
-
-  botonPersonajeJugador.addEventListener("click", seleccionarPersonajeJugador);
   const nombreJugador = document.getElementById("nombre-jugador");
   const nombreEnemigo = document.getElementById("nombre-enemigo");
   const botonPunio = document.getElementById("boton-punio");
   const botonPatada = document.getElementById("boton-patada");
   const botonBarrida = document.getElementById("boton-barrida");
+  const botonReiniciar = document.getElementById("reiniciar")
   const personajes = ["Zuko 🔥", "Katara 💧", "Aang 🌬️", "Toph 🌍"];
   let personajeEnemigo =
     personajes[Math.floor(Math.random() * personajes.length)];
@@ -96,9 +95,11 @@ onload = () => {
   }
 
   // Evento de click en los botones de combate
+  botonPersonajeJugador.onclick = () => seleccionarPersonajeJugador()
   botonPunio.onclick = () => ataquePunio();
   botonPatada.onclick = () => ataquePatada();
   botonBarrida.onclick = () => ataqueBarrida();
+  botonReiniciar.onclick = () => window.location.reload()
 
   /**
    * Función para mostrar un dialogo
