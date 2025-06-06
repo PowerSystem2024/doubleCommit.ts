@@ -24,7 +24,7 @@
 
     p, ul, label {
       color: #0ff;
-      font-size: 12px;
+      font-size: 14px;
     }
 
     input[type="number"] {
@@ -62,8 +62,9 @@
       margin-top: 20px;
       max-height: 400px;
       overflow-y: auto;
+      line-height: 1.5;
       white-space: pre-wrap;
-      font-size: 10px;
+      font-size: 12px;
     }
 
     hr {
@@ -97,6 +98,7 @@
   <label for="discos">🎲 Cantidad de discos:</label>
   <input type="number" id="discos" min="1" max="10" value="3" />
   <button onclick="resolverHanoi()">🚀 Resolver</button>
+  <button type="button" onclick="window.location.reload()">🔁 Reiniciar</button>
 
   <h2>📋 Pasos</h2>
   <div id="salida">Esperando los pasos...</div>
@@ -104,19 +106,33 @@
   <script>
     function hanoi(disco, origen, destino, auxiliar, salida) {
       if (disco === 1) {
-        salida.push(`🟢 Mover disco 1 de ${origen} a ${destino}`);
+        salida.push(`📀 Mover disco 1 de ${origen} a ${destino}`);
         return;
       }
       hanoi(disco - 1, origen, auxiliar, destino, salida);
-      salida.push(`🟢 Mover disco ${n} de ${origen} a ${destino}`);
+      salida.push(`📀 Mover disco ${disco} de ${origen} a ${destino}`);
       hanoi(disco - 1, auxiliar, destino, origen, salida);
+    }
+
+    const escrituraTipoMaquina = (text="") => {
+      const salida = document.getElementById("salida")
+      salida.textContent = ""
+
+      let i = 0;
+      const intervalo = setInterval(() => {
+        salida.textContent += text[i]
+        i++
+        if (i >= text.length) {
+          clearInterval(intervalo)
+        }
+      }, 50)
     }
 
     function resolverHanoi() {
       const discos = parseInt(document.getElementById("discos").value);
       const pasos = [];
       hanoi(discos, "A", "C", "B", pasos);
-      document.getElementById("salida").textContent = pasos.join("\n");
+      escrituraTipoMaquina(pasos.join("\n"))
     }
   </script>
 
