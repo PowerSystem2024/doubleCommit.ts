@@ -233,6 +233,8 @@ onload = () => {
   };
 
   const apagarPC = () => {
+    const audioaPagar = new Audio("/public/windows_xp_apagado.mp3")
+
     let opacity = 100;
       const styles = [
         "position: absolute",
@@ -264,6 +266,7 @@ onload = () => {
 
         if (opacity <= 0) {
           document.body.style.background = "#000";
+          audioaPagar.play()
           document.body.classList.add("apagadoCRT");
           clearInterval(interval);
         }
