@@ -3,7 +3,7 @@ import { cerrarElemento, mostrarElemento } from "./utils/elemento.mjs";
 import { escucharMovimientoMouse } from "./utils/mouse.mjs";
 
 // En cuanto cargue el DOM se ejecuta todo
-onload = () => {
+onload = () => {  
   // Variables para manipular el DOM
   const ventana = document.getElementById("ventana");
   const botonCerrarVentana = document.getElementById("btnX");
@@ -233,13 +233,14 @@ onload = () => {
   };
 
   const apagarPC = () => {
-    const audioaPagar = new Audio("/public/windows_xp_apagado.mp3")
+    const audioApagar = new Audio("/public/windows_xp_apagado.mp3")
 
     let opacity = 100;
       const styles = [
         "position: absolute",
         "top: 50%",
-        "left: 45%",
+        "left: 50%",
+        "transform: translate(-60%, -40%)",
         "display: flex",
         "margin: auto 0",
         "justify-content: center",
@@ -266,7 +267,7 @@ onload = () => {
 
         if (opacity <= 0) {
           document.body.style.background = "#000";
-          audioaPagar.play()
+          audioApagar.play()
           document.body.classList.add("apagadoCRT");
           clearInterval(interval);
         }
