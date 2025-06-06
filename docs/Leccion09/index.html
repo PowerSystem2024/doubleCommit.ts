@@ -105,6 +105,13 @@
           transform: translateX(0%);
         }
       }
+
+      footer {
+        display: flex;
+        margin: 0 auto;
+        justify-content: center;
+        margin-top: 16px;
+      }
     </style>
   </head>
 
@@ -138,7 +145,13 @@
     <h2>📋 Pasos</h2>
     <div id="salida">Esperando los pasos...</div>
 
+    <footer>
+      <small>&copy;</small>
+    </footer>
+
     <script>
+      const footer = document.querySelector("footer small")
+      footer.textContent += `${new Date().getFullYear()} - doubleCommit.ts`
       const escrituraTipoMaquina = (text = "", { elemento = "", tiempo = 50 }, callback = () => {}) => {
         const salida = document.getElementById(elemento);
         salida.textContent = "";
