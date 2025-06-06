@@ -135,8 +135,8 @@
     <div id="salida">Esperando los pasos...</div>
 
     <script>
-      const escrituraTipoMaquina = (text = "", { el = "" }) => {
-        const salida = document.getElementById(el);
+      const escrituraTipoMaquina = (text = "", { elemento = "" }) => {
+        const salida = document.getElementById(elemento);
         salida.textContent = "";
 
         let i = 0;
@@ -150,7 +150,7 @@
       };
 
       escrituraTipoMaquina(historia.textContent.split("").join(""), {
-        el: "historia",
+        elemento: "historia",
       });
 
       function hanoi(disco, origen, destino, auxiliar, salida) {
@@ -167,7 +167,7 @@
         const discos = parseInt(document.getElementById("discos").value);
         const pasos = [];
         hanoi(discos, "A", "C", "B", pasos);
-        escrituraTipoMaquina(pasos.join("\n"), { el: "salida" });
+        escrituraTipoMaquina(pasos.join("\n"), { elemento: "salida" });
       }
     </script>
   </body>
