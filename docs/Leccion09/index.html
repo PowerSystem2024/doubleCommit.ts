@@ -144,8 +144,8 @@
         const intervalo = setInterval(() => {
           salida.textContent += text[i];
           i++;
+          callback();
           if (i >= text.length) {
-            callback();
             clearInterval(intervalo);
           }
         }, tiempo);
