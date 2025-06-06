@@ -136,7 +136,7 @@
     <div id="salida">Esperando los pasos...</div>
 
     <script>
-      const escrituraTipoMaquina = (text = "", { elemento = "" }, callback = () => {}) => {
+      const escrituraTipoMaquina = (text = "", { elemento = "", tiempo = 50 }, callback = () => {}) => {
         const salida = document.getElementById(elemento);
         salida.textContent = "";
 
@@ -148,11 +148,12 @@
             callback();
             clearInterval(intervalo);
           }
-        }, 50);
+        }, tiempo);
       };
 
       escrituraTipoMaquina(historia.textContent.split("").join(""), {
         elemento: "historia",
+        tiempo: 30
       });
 
       function hanoi(disco, origen, destino, auxiliar, salida) {
