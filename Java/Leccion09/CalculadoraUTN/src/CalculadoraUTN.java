@@ -21,7 +21,7 @@ public class CalculadoraUTN {
             System.out.println("Digite el valor para el operando 2: ");
             var operando2 = Integer.parseInt(entrada.nextLine());
 
-            int resultado = 0;
+            int resultado;
             switch (operacion) {
                 case 1 -> {
                     resultado = operando1 + operando2;
