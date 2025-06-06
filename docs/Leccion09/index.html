@@ -45,6 +45,7 @@
       label {
         color: #0ff;
         font-size: 14px;
+        line-height: 1.5;
       }
 
       input[type="number"] {
@@ -135,7 +136,7 @@
     <div id="salida">Esperando los pasos...</div>
 
     <script>
-      const escrituraTipoMaquina = (text = "", { elemento = "" }) => {
+      const escrituraTipoMaquina = (text = "", { elemento = "" }, callback = () => {}) => {
         const salida = document.getElementById(elemento);
         salida.textContent = "";
 
@@ -143,7 +144,9 @@
         const intervalo = setInterval(() => {
           salida.textContent += text[i];
           i++;
+          console.log(text.length);
           if (i >= text.length) {
+            callback();
             clearInterval(intervalo);
           }
         }, 50);
@@ -167,7 +170,13 @@
         const discos = parseInt(document.getElementById("discos").value);
         const pasos = [];
         hanoi(discos, "A", "C", "B", pasos);
-        escrituraTipoMaquina(pasos.join("\n"), { elemento: "salida" });
+        escrituraTipoMaquina(
+          pasos.join("\n"),
+          { elemento: "salida" },
+          () => {
+            window.scrollTo({ top: 1000, behavior: "smooth" })
+          }
+        );
       }
     </script>
   </body>
