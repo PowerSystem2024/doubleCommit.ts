@@ -108,7 +108,7 @@
     <h1>🎮 Torres de Hanoi</h1>
 
     <h2>🏯 Origen del juego</h2>
-    <p>
+    <p id="historia">
       Leyenda oriental del Templo de Brahma: los monjes mueven 64 discos
       sagrados. Al terminar... el fin del mundo. 🌍💥
     </p>
@@ -135,18 +135,8 @@
     <div id="salida">Esperando los pasos...</div>
 
     <script>
-      function hanoi(disco, origen, destino, auxiliar, salida) {
-        if (disco === 1) {
-          salida.push(`📀 Mover disco 1 de ${origen} a ${destino}`);
-          return;
-        }
-        hanoi(disco - 1, origen, auxiliar, destino, salida);
-        salida.push(`📀 Mover disco ${disco} de ${origen} a ${destino}`);
-        hanoi(disco - 1, auxiliar, destino, origen, salida);
-      }
-
-      const escrituraTipoMaquina = (text = "") => {
-        const salida = document.getElementById("salida");
+      const escrituraTipoMaquina = (text = "", { el = "" }) => {
+        const salida = document.getElementById(el);
         salida.textContent = "";
 
         let i = 0;
@@ -159,11 +149,25 @@
         }, 50);
       };
 
+      escrituraTipoMaquina(historia.textContent.split("").join(""), {
+        el: "historia",
+      });
+
+      function hanoi(disco, origen, destino, auxiliar, salida) {
+        if (disco === 1) {
+          salida.push(`📀 Mover disco 1 de ${origen} a ${destino}`);
+          return;
+        }
+        hanoi(disco - 1, origen, auxiliar, destino, salida);
+        salida.push(`📀 Mover disco ${disco} de ${origen} a ${destino}`);
+        hanoi(disco - 1, auxiliar, destino, origen, salida);
+      }
+
       function resolverHanoi() {
         const discos = parseInt(document.getElementById("discos").value);
         const pasos = [];
         hanoi(discos, "A", "C", "B", pasos);
-        escrituraTipoMaquina(pasos.join("\n"));
+        escrituraTipoMaquina(pasos.join("\n"), { el: "salida" });
       }
     </script>
   </body>
