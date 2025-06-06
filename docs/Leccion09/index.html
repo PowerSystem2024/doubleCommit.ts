@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Torres de Hanoi - Estilo Tetris</title>
+
+    <!-- Tipografía pixel retro -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: "Press Start 2P", monospace;
+        background-color: #111;
+        color: #0ff;
+        padding: 20px;
+        text-shadow: 1px 1px 2px #0ff;
+        overflow-x: hidden;
+      }
+
+      h1,
+      h2 {
+        color: #ff0;
+        text-shadow: 2px 2px 0 #f0f;
+      }
+
+      h1 {
+        animation: slideEffect 0.9s forwards ease-in;
+      }
+      h2:nth-of-type(1) {
+        animation: slideEffect 1.3s forwards ease-in;
+      }
+      h2:nth-of-type(2) {
+        animation: slideEffect 1.6s forwards ease-in;
+      }
+      h2:nth-of-type(3) {
+        animation: slideEffect 1.9s forwards ease-in;
+      }
+
+      p,
+      ul,
+      label {
+        color: #0ff;
+        font-size: 14px;
+      }
+
+      input[type="number"] {
+        font-family: "Press Start 2P";
+        font-size: 12px;
+        width: 60px;
+        background-color: #222;
+        color: #0f0;
+        border: 2px solid #0ff;
+        padding: 5px;
+        margin-right: 10px;
+      }
+
+      button {
+        font-family: "Press Start 2P";
+        font-size: 12px;
+        background-color: #f0f;
+        color: #000;
+        border: none;
+        padding: 8px 12px;
+        cursor: pointer;
+        box-shadow: 2px 2px 0 #ff0;
+        transition: transform 0.2s;
+      }
+
+      button:hover {
+        transform: scale(1.05);
+      }
+
+      #salida {
+        background-color: #222;
+        color: #0f0;
+        padding: 15px;
+        border: 2px dashed #0ff;
+        margin-top: 20px;
+        max-height: 400px;
+        overflow-y: auto;
+        line-height: 1.5;
+        white-space: pre-wrap;
+        font-size: 12px;
+      }
+
+      hr {
+        border: none;
+        border-top: 1px dashed #444;
+        margin: 20px 0;
+      }
+
+      @keyframes slideEffect {
+        0% {
+          transform: translateX(-100%);
+        }
+        100% {
+          transform: translateX(0%);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>🎮 Torres de Hanoi</h1>
+
+    <h2>🏯 Origen del juego</h2>
+    <p id="historia">
+      Leyenda oriental del Templo de Brahma: los monjes mueven 64 discos
+      sagrados. Al terminar... el fin del mundo. 🌍💥
+    </p>
+
+    <hr />
+
+    <h2>📜 Reglas</h2>
+    <ul>
+      <li>Solo un disco por movimiento.</li>
+      <li>No poner discos grandes sobre pequeños.</li>
+      <li>Mover todos a la varilla destino.</li>
+    </ul>
+
+    <hr />
+
+    <label for="discos">🎲 Cantidad de discos:</label>
+    <input type="number" id="discos" min="1" max="10" value="3" />
+    <button onclick="resolverHanoi()">🚀 Resolver</button>
+    <button type="button" onclick="window.location.reload()">
+      🔁 Reiniciar
+    </button>
+
+    <h2>📋 Pasos</h2>
+    <div id="salida">Esperando los pasos...</div>
+
+    <script>
+      const escrituraTipoMaquina = (text = "", { elemento = "" }) => {
+        const salida = document.getElementById(elemento);
+        salida.textContent = "";
+
+        let i = 0;
+        const intervalo = setInterval(() => {
+          salida.textContent += text[i];
+          i++;
+          if (i >= text.length) {
+            clearInterval(intervalo);
+          }
+        }, 50);
+      };
+
+      escrituraTipoMaquina(historia.textContent.split("").join(""), {
+        elemento: "historia",
+      });
+
+      function hanoi(disco, origen, destino, auxiliar, salida) {
+        if (disco === 1) {
+          salida.push(`📀 Mover disco 1 de ${origen} a ${destino}`);
+          return;
+        }
+        hanoi(disco - 1, origen, auxiliar, destino, salida);
+        salida.push(`📀 Mover disco ${disco} de ${origen} a ${destino}`);
+        hanoi(disco - 1, auxiliar, destino, origen, salida);
+      }
+
+      function resolverHanoi() {
+        const discos = parseInt(document.getElementById("discos").value);
+        const pasos = [];
+        hanoi(discos, "A", "C", "B", pasos);
+        escrituraTipoMaquina(pasos.join("\n"), { elemento: "salida" });
+      }
+    </script>
+  </body>
+</html>
