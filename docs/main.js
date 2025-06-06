@@ -18,6 +18,7 @@ onload = () => {
     tijera: document.getElementById("btn3"),
     reiniciar: document.getElementById("reiniciar"),
     reiniciarCompleto: document.getElementById("reiniciarTodo"),
+    apagarPc: document.getElementById("shut-down"),
   };
   const puntos = {
     jugador: document.getElementById("pJugador"),
@@ -27,7 +28,7 @@ onload = () => {
 
   let puntosJugador = 0;
   let puntosPC = 0;
-  
+
   /**
    * Método para arrastrar ventanas en el DOM según su posición en el eje { x, y }
    * @param {Element} ventana
@@ -150,7 +151,7 @@ onload = () => {
   }
 
   // Actividad botón inicio
-  const manejarBotonInicio = () => {    
+  const manejarBotonInicio = () => {
     if (!menuInicio.checkVisibility()) {
       menuInicio.style.display = "flex";
     } else {
@@ -165,7 +166,7 @@ onload = () => {
     const url = direccionURL
       ? decodeURIComponent(direccionURL)
       : "https://neo-wifi.vercel.app";
-   
+
     const wrapper = document.createElement("div");
     wrapper.className = "navegador-wrapper";
     wrapper.id = "navegador-wrapper";
@@ -231,6 +232,44 @@ onload = () => {
     });
   };
 
+  const apagarPC = () => {
+    let opacity = 100;
+      const styles = [
+        "position: absolute",
+        "top: 50%",
+        "left: 45%",
+        "display: flex",
+        "margin: auto 0",
+        "justify-content: center",
+        "font-size: 1.3rem",
+        "font-weight: 800",
+        "align-items: center",
+        "padding: 16px",
+        "border-color: #dfdfdf #000 #000 #dfdfdf",
+        "background-color: #c0c0c0",
+        "box-shadow: inset 1px 1px 0px 1px #fff, 1px 1px 0 1px #000"
+      ];
+      menuInicio.style.display = "none"
+      document.body.innerHTML += `
+      <div 
+      style="${styles.join(';')}">
+      Apagando pc...<span style="animation: spinn 2s forwards infinite;"> ⏳</span>
+      </div>
+      `;
+      const interval = setInterval(() => {
+        opacity--;
+        document.body.style.opacity = `${parseFloat(opacity)
+          .toFixed(1)
+          .padStart(2, "0")}`;
+
+        if (opacity <= 0) {
+          document.body.style.background = "#000";
+          document.body.classList.add("apagadoCRT");
+          clearInterval(interval);
+        }
+      }, 50);
+  }
+
   const manejarEventosBotones = () => {
     opcionBoton.iconoAplicacion.addEventListener("dblclick", () => {
       mostrarElemento(ventana);
@@ -258,6 +297,9 @@ onload = () => {
     });
     inico.onclick = () => {
       manejarBotonInicio();
+    };
+    opcionBoton.apagarPc.onclick = () => {
+      apagarPC()
     };
   };
 
