@@ -233,7 +233,7 @@ onload = () => {
   };
 
   const apagarPC = () => {
-    const audioApagar = new Audio("/public/windows_xp_apagado.mp3")
+    const audioApagar = new Audio("/windows_xp_apagado.mp3")
 
     let opacity = 100;
       const styles = [
