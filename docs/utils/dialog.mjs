@@ -20,7 +20,7 @@ export const abrirDialogo = (contenido = "") => {
 };
 /**
  * Cierra el dialogo evaluando el evento de click, y si éste no lo
- * contiene elimina el elemento del DOM
+ * contiene cierra el dialogo y elimina el elemento del DOM
  * @returns {void}
  */
 const cerrarDialogo = () => {
