@@ -1,4 +1,4 @@
-import psycopg2 as bd
+from psycopg2 import pool
 from logger_base import log
 import sys
 
@@ -6,45 +6,49 @@ import sys
 class Conexion:
     _DATABASE = "test_bd"
     _USERNAME = "postgres"
-    _PASSWORD = "32088028..mGc"
+    _PASSWORD = "admin1234"
     _PORT = "5432"
     _HOST = "127.0.0.1"
-    _conexion = None
-    _cursor = None
+    _MIN_CON = 1
+    _MAX_CON = 5
+    _pool = None
 
     @classmethod
     def obtener_conexion(cls):
-        if cls._conexion is None:
+        conexion = cls.obtener_pool().getconn()
+        log.debug(f'Conexión obtenida del pool: {conexion}')
+        return conexion
+        
+            
+    @classmethod
+    def obtener_pool(cls):
+        if cls._pool is None:
             try:
-                cls._conexion = bd.connect(
+                cls._pool = pool.SimpleConnectionPool(
+                    maxconn=cls._MAX_CON,
+                    minconn=cls._MIN_CON,
                     host=cls._HOST,
                     user=cls._USERNAME,
                     password=cls._PASSWORD,
                     port=cls._PORT,
-                    database=cls._DATABASE,
+                    database=cls._DATABASE
                 )
-                log.debug(f"Conexión exitosa: {cls._conexion}")
-                return cls._conexion
+                log.debug(f'Creación de l pool exitosa {cls._pool}')
+                return cls._pool
             except Exception as e:
-                log.error(f"Ocurrió un error: {e}")
+                log.error(f'Ocurrió un error en el pool: {e}')
                 sys.exit()
         else:
-            return cls._conexion
+            return cls._pool
 
     @classmethod
     def obtener_cursor(cls):
-        if cls._cursor is None:
-            try:
-                cls._cursor = cls.obtener_conexion().cursor()
-                log.debug(f"Se abrió correctamente el cursor: {cls._cursor}")
-                return cls._cursor
-            except Exception as e:
-                log.error(f"Ocurrió un error: {e}")
-                sys.exit()
-        else:
-            return cls._cursor
-
+        pass
 
 if __name__ == "__main__":
-    Conexion.obtener_conexion()
-    Conexion.obtener_cursor()
+    conexion1 = Conexion.obtener_conexion()
+    conexion2 = Conexion.obtener_conexion()
+    conexion3 = Conexion.obtener_conexion()
+    conexion4 = Conexion.obtener_conexion()
+    conexion5 = Conexion.obtener_conexion()
+    conexion6 = Conexion.obtener_conexion()
