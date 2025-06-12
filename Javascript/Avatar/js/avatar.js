@@ -17,6 +17,20 @@ onload = () => {
   const aletarorio = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   };
+  const reglasDelJuego = document.getElementById("reglas")
+  const botonReglas = document.getElementById("ver-reglas")
+  const cerrarReglas = document.getElementById("cerrar-reglas")
+
+  reglasDelJuego.style.display = "none"
+  botonReglas.onclick = () => {
+    if (reglasDelJuego) {
+      reglasDelJuego.style.display = "flex"
+    }
+  }
+
+  cerrarReglas.onclick = () => {
+    reglasDelJuego.style.display = "none"
+  }
 
   function seleccionarPersonajeJugador() {
     const zuko = document.getElementById("zuko");

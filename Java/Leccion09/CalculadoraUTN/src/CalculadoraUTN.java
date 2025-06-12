@@ -21,7 +21,7 @@ public class CalculadoraUTN {
             } catch (Exception e) {
                 System.out.println("Ocurrió un error = " + e.getMessage() + "\n");
             }
-        }
+        } // Fin del while
     }
 
     public static void mostrarMenu() {

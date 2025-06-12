@@ -208,3 +208,18 @@ dialog::backdrop {
     width: 100%;
   }
 }
+
+.reglas {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+#cerrar-reglas {
+  border: 1px solid #eee;
+  padding: 2px 6px;
+  cursor: pointer;
+  width: fit-content;
+}
