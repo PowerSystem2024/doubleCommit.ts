@@ -213,8 +213,16 @@ dialog::backdrop {
   width: fit-content;
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  margin: 16px auto;
   justify-content: center;
+  background-color: #f9f9f9;
+  border: 2px solid #eee;
+  padding: 16px;
+  border-radius: 12px;
+
+  & ol > li {
+    text-align: left;
+  }
 }
 
 #cerrar-reglas {
