@@ -8,9 +8,11 @@ node_modules
 .*
 .vscode
 __pycache__
+/nbproject
+nbproject/
+/nbproject/private/
 /Java/Leccion01/MundoPc/nbproject/private/
 /Java/Leccion01/MundoPc/build/
-/nbproject/private/
 /Java/Leccion02/ArgumentoVariable/target/
 /Java/Leccion02/Enumeraciones/nbproject/private/
 /Java/Leccion02/Enumeraciones/build/
