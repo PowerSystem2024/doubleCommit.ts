@@ -51,9 +51,11 @@ public class ListadoPersonasApp {
                 System.out.println("No hay personas cargadas en el sistema para listar.");
             }
             System.out.println("Personas en la lista: ");
-            for (int i = 0; i < personas.toArray().length; i++) {
-                System.out.println(personas.toArray()[i].toString());
-            }
+//            for (int i = 0; i < personas.toArray().length; i++) {
+//                System.out.println(personas.toArray()[i].toString());
+//            }
+            // Mejoras con lambda y métodos de referencia
+            personas.forEach(System.out::println);
         } else {
             System.out.println("Saliendo de la aplicación...");
             return true;
