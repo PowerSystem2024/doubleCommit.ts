@@ -44,6 +44,7 @@ public class ListadoPersonasApp {
             Persona persona = new Persona(nombre, tel, email);
             personas.add(persona);
             System.out.println("Se añadió persona con éxito: " + persona.toString());
+            System.out.println("La lista tiene: " + personas.size() + " elemento/s.");
             return false;
         } else if (opcion == 2) {
             if (personas.toArray().length == 0) {
