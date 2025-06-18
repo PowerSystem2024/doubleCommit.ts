@@ -76,6 +76,7 @@ onload = () => {
     document.getElementById("vs-nombre-enemigo").innerText = personajeEnemigo;
     document.getElementById("vs-img-enemigo").src = imagenes[personajeEnemigo];
     document.getElementById("personajes-vs-enemigo").style.display = "block";
+    document.getElementById("seleccionar-ataque").style.display = "block";
 
     nombreJugador.textContent = `Tú personaje ${personajeSeleccionado} tiene ${vidasJugador} vidas`;
     nombreEnemigo.textContent = `El enemigo ${personajeEnemigo} tiene ${vidasEnemigo} vidas`;
