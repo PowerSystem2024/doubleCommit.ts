@@ -122,51 +122,50 @@ onload = () => {
    */
   const crearDialogo = (contenido = "") => {
     const dialogo = document.createElement("dialog");
-    document.body.appendChild(dialogo);
     dialogo.innerHTML = `
-    <div>
+      <div>
         <header>
-            <p>Resultado</p>
-            <span title="Cerrar diálogo">X</span>
+          <p>Resultado</p>
+          <span id="cerrar-dialogo" title="Cerrar diálogo" style="cursor: pointer;">✖</span>
         </header>
         <p style="padding: 24px">${contenido}</p>
-    </div>
+      </div>
     `;
-    dialogo.showModal();
-    cerrarDialogo();
-  };
 
+    document.body.appendChild(dialogo);
+    dialogo.showModal();
+
+    // Llamamos después de mostrar el diálogo
+    cerrarDialogo(dialogo);
+  };
   /**
    * Cerrar dialogo y evitar re-renderizado, se puede cerrar haciendo click fuera.
    */
-  const cerrarDialogo = () => {
-    const dialogo = document.querySelector("dialog");
+  const cerrarDialogo = (dialogo) => {
     const divDialogo = dialogo.querySelector("div");
-    const botonCerrar = dialogo.querySelector("span");
+    const botonCerrar = dialogo.querySelector("#cerrar-dialogo");
 
-    if (dialogo) {
-      dialogo.onclick = (event) => {
-        if (
-          (dialogo && !divDialogo?.contains(event.target)) ||
-          botonCerrar.contains(event.target)
-        ) {
-          dialogo.close();
-          document.body.removeChild(dialogo);
-        }
-      };
-    }
+    dialogo.onclick = (event) => {
+      if (!divDialogo.contains(event.target) || botonCerrar.contains(event.target)) {
+        dialogo.close();
+        dialogo.remove();
+      }
+    };
   };
   // Función de combate
   function combate() {
     nombreJugador.textContent = personajeSeleccionado;
     nombreEnemigo.textContent = personajeEnemigo;
-
+    
     ataqueAleatorioEnemigo();
+  
+
     if (vidasEnemigo > 0 && vidasJugador > 0) {
       if (ataqueEnemigo === ataqueJugador) {
         crearDialogo(`${personajeSeleccionado} a empatado ésta ronda con ${personajeEnemigo}`);
         nombreJugador.textContent = `${personajeSeleccionado} tiene ${vidasJugador} vidas`;
         nombreEnemigo.textContent = `${personajeEnemigo} tiene ${vidasEnemigo} vidas`;
+        revisarVidas();
       } else if (
         (ataqueJugador === "Puño 👊" && ataqueEnemigo === "Barrida 🦶") ||
         (ataqueJugador === "Barrida 🦶" && ataqueEnemigo === "Patada 🦵") ||
@@ -176,15 +175,33 @@ onload = () => {
         vidasEnemigo--;
         nombreJugador.textContent = `${personajeSeleccionado} tiene ${vidasJugador} vidas`;
         nombreEnemigo.textContent = `${personajeEnemigo} tiene ${vidasEnemigo} vidas`;
+        revisarVidas();
       } else {
         crearDialogo(`${personajeEnemigo} le ha ganado a ${personajeSeleccionado}. Pierdes una vida en ésta ronda!`);
         vidasJugador--;
         nombreJugador.textContent = `${personajeSeleccionado} tiene ${vidasJugador} vidas`;
         nombreEnemigo.textContent = `${personajeEnemigo} tiene ${vidasEnemigo} vidas`;
+        revisarVidas();
       }
-    } else {
-      alert("Terminó el juego");
-      window.location.reload();
     }
   }
+
+  function revisarVidas() {
+    if (vidasJugador === 0) {
+      crearDialogo(`${personajeEnemigo} ha ganado el combate. 😓`);
+      deshabilitarBotones();
+      // window.location.reload();
+    } else if (vidasEnemigo === 0) {
+      crearDialogo(`¡${personajeSeleccionado} ha ganado el combate! 🏆`);
+      deshabilitarBotones();
+      // window.location.reload();
+    }
+  }
+
+  function deshabilitarBotones() {
+    botonPunio.disabled = true;
+    botonPatada.disabled = true;
+    botonBarrida.disabled = true;
+  }
+
 };
