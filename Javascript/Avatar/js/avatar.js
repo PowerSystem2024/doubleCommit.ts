@@ -73,10 +73,6 @@ onload = () => {
     // Ocultar sección
     seccionSeleccionarPersonaje.style.display = "none"
 
-    window.scrollTo({
-      top: 1000,
-      behavior: "smooth"
-    })
     // Mostrar sección personaje-vs-enemigo
     document.getElementById("vs-nombre-jugador").innerText =
       personajeSeleccionado;
@@ -87,6 +83,10 @@ onload = () => {
     document.getElementById("personajes-vs-enemigo").style.display = "block";
     document.getElementById("seleccionar-ataque").style.display = "block";
 
+    window.scrollTo({
+      top: 200,
+      behavior: "smooth"
+    })
     nombreJugador.textContent = `Tú personaje ${personajeSeleccionado} tiene ${vidasJugador} vidas`;
     nombreEnemigo.textContent = `El enemigo ${personajeEnemigo} tiene ${vidasEnemigo} vidas`;
   }
