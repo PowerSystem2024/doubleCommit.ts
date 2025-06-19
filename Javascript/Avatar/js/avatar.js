@@ -12,6 +12,7 @@ onload = () => {
   const botonBarrida = document.getElementById("boton-barrida");
   const botonReiniciar = document.getElementById("reiniciar")
   const mensajeFinal = document.getElementById("mensaje-final");
+  const seccionSeleccionarPersonaje = document.getElementById("seccion-1")
   const personajes = ["Zuko 🔥", "Katara 💧", "Aang 🌬️", "Toph 🌍"];
   let personajeEnemigo =
     personajes[Math.floor(Math.random() * personajes.length)];
@@ -69,6 +70,13 @@ onload = () => {
         personajes[Math.floor(Math.random() * personajes.length)];
     }
 
+    // Ocultar sección
+    seccionSeleccionarPersonaje.style.display = "none"
+
+    window.scrollTo({
+      top: 1000,
+      behavior: "smooth"
+    })
     // Mostrar sección personaje-vs-enemigo
     document.getElementById("vs-nombre-jugador").innerText =
       personajeSeleccionado;
