@@ -11,6 +11,7 @@ onload = () => {
   const botonPatada = document.getElementById("boton-patada");
   const botonBarrida = document.getElementById("boton-barrida");
   const botonReiniciar = document.getElementById("reiniciar")
+  const mensajeFinal = document.getElementById("mensaje-final");
   const personajes = ["Zuko 🔥", "Katara 💧", "Aang 🌬️", "Toph 🌍"];
   let personajeEnemigo =
     personajes[Math.floor(Math.random() * personajes.length)];
@@ -156,16 +157,16 @@ onload = () => {
   function combate() {
     nombreJugador.textContent = personajeSeleccionado;
     nombreEnemigo.textContent = personajeEnemigo;
-    
+
     ataqueAleatorioEnemigo();
-  
+    revisarVidas();
 
     if (vidasEnemigo > 0 && vidasJugador > 0) {
       if (ataqueEnemigo === ataqueJugador) {
         crearDialogo(`${personajeSeleccionado} a empatado ésta ronda con ${personajeEnemigo}`);
         nombreJugador.textContent = `${personajeSeleccionado} tiene ${vidasJugador} vidas`;
         nombreEnemigo.textContent = `${personajeEnemigo} tiene ${vidasEnemigo} vidas`;
-        revisarVidas();
+        // revisarVidas();
       } else if (
         (ataqueJugador === "Puño 👊" && ataqueEnemigo === "Barrida 🦶") ||
         (ataqueJugador === "Barrida 🦶" && ataqueEnemigo === "Patada 🦵") ||
@@ -175,13 +176,13 @@ onload = () => {
         vidasEnemigo--;
         nombreJugador.textContent = `${personajeSeleccionado} tiene ${vidasJugador} vidas`;
         nombreEnemigo.textContent = `${personajeEnemigo} tiene ${vidasEnemigo} vidas`;
-        revisarVidas();
+        // revisarVidas();
       } else {
         crearDialogo(`${personajeEnemigo} le ha ganado a ${personajeSeleccionado}. Pierdes una vida en ésta ronda!`);
         vidasJugador--;
         nombreJugador.textContent = `${personajeSeleccionado} tiene ${vidasJugador} vidas`;
         nombreEnemigo.textContent = `${personajeEnemigo} tiene ${vidasEnemigo} vidas`;
-        revisarVidas();
+        // revisarVidas();
       }
     }
   }
@@ -190,10 +191,18 @@ onload = () => {
     if (vidasJugador === 0) {
       crearDialogo(`${personajeEnemigo} ha ganado el combate. 😓`);
       deshabilitarBotones();
+      // document.getElementById("resultado-combate").style.display = "none";
+      // document.getElementById("mensajes-combate").style.display = "block";
+      // mensajeFinal.textContent = `${personajeEnemigo} ha ganado el combate. 😓`;
+
       // window.location.reload();
     } else if (vidasEnemigo === 0) {
       crearDialogo(`¡${personajeSeleccionado} ha ganado el combate! 🏆`);
       deshabilitarBotones();
+      // document.getElementById("resultado-combate").style.display = "none";
+      // document.getElementById("mensajes-combate").style.display = "block";
+      // mensajeFinal.textContent = `¡${personajeSeleccionado} ha ganado el combate! 🏆`;
+
       // window.location.reload();
     }
   }
