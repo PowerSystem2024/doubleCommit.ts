@@ -16,6 +16,13 @@ h2 {
   margin-bottom: 15px;
 }
 
+header {
+  display: flex;
+  height: 56px;
+  justify-content: space-between;
+  align-items: center;
+}
+
 #seleccionar-personaje label {
   display: inline-block;
   margin: 10px;
