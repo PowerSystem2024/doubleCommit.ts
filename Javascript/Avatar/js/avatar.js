@@ -27,7 +27,7 @@ onload = () => {
 
   reglasDelJuego.style.display = "none"
   botonReglas.onclick = () => {
-    crearDialogo(reglasDelJuego.textContent, "Reglas")
+    crearDialogo(reglasDelJuego.textContent, "⚠ Información del Juego")
   }
 
   cerrarReglas.onclick = () => {
