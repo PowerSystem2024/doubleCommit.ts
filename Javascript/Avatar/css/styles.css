@@ -23,6 +23,11 @@ header {
   align-items: center;
 }
 
+#seleccionar-personaje {
+  width: 60%;
+  margin: 16px auto;
+}
+
 #seleccionar-personaje label {
   display: inline-block;
   margin: 10px;

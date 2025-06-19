@@ -1,3 +1,5 @@
+import { mostrarElemento } from "../../../docs/utils/elemento.mjs";
+
 onload = () => {
   let ataqueJugador;
   let ataqueEnemigo;
@@ -25,9 +27,7 @@ onload = () => {
 
   reglasDelJuego.style.display = "none"
   botonReglas.onclick = () => {
-    if (reglasDelJuego) {
-      reglasDelJuego.style.display = "flex"
-    }
+    crearDialogo(reglasDelJuego.textContent, "Reglas")
   }
 
   cerrarReglas.onclick = () => {
@@ -129,12 +129,12 @@ onload = () => {
    * Función para mostrar un dialogo
    * @returns {void}
    */
-  const crearDialogo = (contenido = "") => {
+  const crearDialogo = (contenido = "", titulo = "Resultado") => {
     const dialogo = document.createElement("dialog");
     dialogo.innerHTML = `
       <div>
         <header>
-          <p>Resultado</p>
+          <p>${titulo}</p>
           <span id="cerrar-dialogo" title="Cerrar diálogo" style="cursor: pointer;">✖</span>
         </header>
         <p style="padding: 24px">${contenido}</p>
