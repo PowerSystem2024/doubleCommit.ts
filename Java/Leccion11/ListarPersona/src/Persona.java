@@ -19,15 +19,15 @@ public class Persona {
     }
 
     public int getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.id = this.id;
     }
 
     public String getNombre() {
-        return nombre;
+        return this.nombre;
     }
 
     public void setNombre(String nombre) {
@@ -35,7 +35,7 @@ public class Persona {
     }
 
     public String getTel() {
-        return tel;
+        return this.tel;
     }
 
     public void setTel(String tel) {
@@ -43,7 +43,7 @@ public class Persona {
     }
 
     public String getEmail() {
-        return email;
+        return this.email;
     }
 
     public void setEmail(String email) {
