@@ -7,7 +7,10 @@ public class Estudiante {
     private String telefono;
     private String email;
 
-    public Estudiante() {};
+    public Estudiante() {
+    }
+
+    ;
 
     public Estudiante(int idEstudiante) { // Constructor para la llave primaria
         this.idEstudiante = idEstudiante;
@@ -30,7 +33,7 @@ public class Estudiante {
     }
 
     public int getIdEstudiante() {
-        return idEstudiante;
+        return this.idEstudiante;
     }
 
     public void setIdEstudiante(int idEstudiante) {
@@ -71,12 +74,6 @@ public class Estudiante {
 
     @Override
     public String toString() {
-        return "Estudiante{" +
-                "idEstudiante=" + idEstudiante +
-                ", nombre='" + nombre + '\'' +
-                ", apellido='" + apellido + '\'' +
-                ", telefono='" + telefono + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+        return "Estudiante{" + "idEstudiante=" + idEstudiante + ", nombre='" + nombre + '\'' + ", apellido='" + apellido + '\'' + ", telefono='" + telefono + '\'' + ", email='" + email + '\'' + '}';
     }
 }
