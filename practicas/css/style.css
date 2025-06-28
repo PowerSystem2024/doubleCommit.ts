@@ -55,7 +55,10 @@ section .color:nth-child(3) {
 # Cajas flotantes con animación
 */
 
-.box .square, .box .square-2 {
+.box .square,
+.box .square-2,
+.box .square-3,
+.box .square-4 {
   position: absolute;
   backdrop-filter: blur(5px);
   box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
@@ -88,8 +91,29 @@ section .color:nth-child(3) {
 .box .square-2:nth-child(2) {
   top: 50px;
   left: -60px;
-  width: 100px;
-  height: 100px;
+  width: 160px;
+  height: 160px;
+}
+
+.box .square-3:nth-child(3) {
+  top: 350px;
+  right: 60px;
+  width: 160px;
+  height: 160px;
+}
+
+.box .square-4:nth-child(4) {
+  top: 100px;
+  left: 60px;
+  width: 160px;
+  height: 160px;
+  animation: rotate 12s linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    rotate: 360deg;
+  }
 }
 
 /*
