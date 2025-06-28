@@ -91,15 +91,16 @@ section .color:nth-child(3) {
 .box .square-2:nth-child(2) {
   top: 50px;
   left: -60px;
-  width: 160px;
-  height: 160px;
+  width: 90px;
+  height: 90px;
 }
 
 .box .square-3:nth-child(3) {
   top: 350px;
   right: 60px;
-  width: 160px;
-  height: 160px;
+  width: 100px;
+  height: 100px;
+  animation: fadeIn 18s ease-in-out infinite;
 }
 
 .box .square-4:nth-child(4) {
@@ -113,6 +114,21 @@ section .color:nth-child(3) {
 @keyframes rotate {
   to {
     rotate: 360deg;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    transform: scale(0.3);
+    opacity: 0.2;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.3);
+    opacity: 0.2;
   }
 }
 
