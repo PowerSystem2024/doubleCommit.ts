@@ -9,6 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class EstudianteDAO {
     // Método listar
@@ -126,14 +127,35 @@ public class EstudianteDAO {
             }
         }
         return false;
+    } // Fin método modificar estudiante
+
+    public boolean eliminarEstudiante(Estudiante estudiante) {
+        PreparedStatement ps;
+        Connection conn = getConnection();
+        String sql = "DELETE FROM estudiantes2024 WHERE idestudiantes2024 = ?";
+        try {
+            ps = conn.prepareStatement(sql);
+            ps.setInt(1, estudiante.getIdEstudiante());
+            ps.execute();
+            return true;
+        } catch (Exception e) {
+            System.out.println("Ocurrió un error al eliminar estudiante: " + e.getMessage());
+            return false;
+        } finally {
+            try {
+                conn.close();
+            } catch (Exception e) {
+                System.out.println("Ocurrió un error al cerrar la conexión: " + e.getMessage());
+            }
+        }
     }
 
     public static void main(String[] args) {
         // LIstar estudiantes
-        var estudianteDAO = new EstudianteDAO();
-        System.out.println("Listado de estudiantes");
-        List<Estudiante> estudiantes = estudianteDAO.listarEstudiante();
-        estudiantes.forEach(System.out::println); // Función lamda para imprimir
+          var estudianteDAO = new EstudianteDAO();
+//        System.out.println("Listado de estudiantes");
+//        List<Estudiante> estudiantes = estudianteDAO.listarEstudiante();
+//        estudiantes.forEach(System.out::println); // Función lamda para imprimir
         // Búsqueda de estudiante por ID
 //        var estudiante1 = new Estudiante(3);
 //        System.out.println("Estudiantes antes de la busqueda: " + estudiante1);
@@ -151,15 +173,33 @@ public class EstudianteDAO {
 //        } else {
 //            System.out.println("No se agregó estudiante a la BD: " + nuevoEstudiante);
 //        }
+
         // Modificación estudiante
-        var estudianteModificado = new Estudiante(4, "Laura", "Gonzales", "2664562887", "laura_gon@yahoo.com");
-        var modificado = estudianteDAO.modificarEstudiante(estudianteModificado);
-        System.out.println("ID a modificar: " + estudianteModificado.getIdEstudiante());
-        if (modificado) {
-            System.out.println("Se ha modificado el estudiante: " + estudianteModificado);
+//        var estudianteModificado = new Estudiante(4, "Laura", "Gonzales", "2664562887", "laura_gon@yahoo.com");
+//        var modificado = estudianteDAO.modificarEstudiante(estudianteModificado);
+//        System.out.println("ID a modificar: " + estudianteModificado.getIdEstudiante());
+//        if (modificado) {
+//            System.out.println("Se ha modificado el estudiante: " + estudianteModificado);
+//        } else {
+//            System.out.println("No se ha podido modificar el estudiante: " + estudianteModificado);
+//        }
+
+        // Eliminar estudiante con ID 3
+        System.out.println("Ingrese el ID de estudiante para eliminar: ");
+        Scanner escaner = new Scanner(System.in);
+        int idEstudiante = Integer.parseInt(escaner.nextLine());
+        var estudianteEliminar = new Estudiante(idEstudiante);
+        var eliminado = estudianteDAO.eliminarEstudiante(estudianteEliminar);
+        if (eliminado) {
+            System.out.println("Se ha elimnado el estudiante " + estudianteEliminar);
         } else {
-            System.out.println("No se ha podido modificar el estudiante: " + estudianteModificado);
+            System.out.println("No se eliminó el estudiante " + estudianteEliminar);
         }
+
+        // Listar estudiantes para verificar la eliminación
+        System.out.println("Listado de estudiantes: ");
+        List<Estudiante> estudiantes = estudianteDAO.listarEstudiante();
+        estudiantes.forEach(System.out::println); // Función lambda para imprimir
 
     }
 }
