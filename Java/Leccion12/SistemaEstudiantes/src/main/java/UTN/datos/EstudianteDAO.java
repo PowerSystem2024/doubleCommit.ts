@@ -101,7 +101,6 @@ public class EstudianteDAO {
     } // Fin método agregar estudiante
 
     // Método modificar estudiante
-
     public boolean modificarEstudiante(Estudiante estudiante) {
         PreparedStatement ps;
         Connection con = getConnection();
@@ -129,6 +128,7 @@ public class EstudianteDAO {
         return false;
     } // Fin método modificar estudiante
 
+    // Método eliminar estudiante
     public boolean eliminarEstudiante(Estudiante estudiante) {
         PreparedStatement ps;
         Connection conn = getConnection();
@@ -184,16 +184,17 @@ public class EstudianteDAO {
 //            System.out.println("No se ha podido modificar el estudiante: " + estudianteModificado);
 //        }
 
-        // Eliminar estudiante con ID 3
+        // Eliminar estudiante con ID
         System.out.println("Ingrese el ID de estudiante para eliminar: ");
         Scanner escaner = new Scanner(System.in);
         int idEstudiante = Integer.parseInt(escaner.nextLine());
-        var estudianteEliminar = new Estudiante(idEstudiante);
-        var eliminado = estudianteDAO.eliminarEstudiante(estudianteEliminar);
+        var estudianteAEliminar = new Estudiante(idEstudiante);
+        var eliminado = estudianteDAO.eliminarEstudiante(estudianteAEliminar);
+
         if (eliminado) {
-            System.out.println("Se ha elimnado el estudiante " + estudianteEliminar);
+            System.out.println("Se ha eliminado el estudiante " + estudianteAEliminar);
         } else {
-            System.out.println("No se eliminó el estudiante " + estudianteEliminar);
+            System.out.println("No se eliminó el estudiante " + estudianteAEliminar);
         }
 
         // Listar estudiantes para verificar la eliminación
